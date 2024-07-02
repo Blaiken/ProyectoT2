@@ -39,6 +39,11 @@ public class MenuInicio extends javax.swing.JFrame {
         BtnGinecologa.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         BtnGinecologa.setText("Ginecóloga");
         BtnGinecologa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnGinecologa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGinecologaActionPerformed(evt);
+            }
+        });
 
         BtnCrearCuenta.setBackground(new java.awt.Color(255, 254, 255));
         BtnCrearCuenta.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -62,7 +67,7 @@ public class MenuInicio extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("MENU INICIO");
+        jLabel2.setText("MENÚ INICIO");
         jLabel2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
 
         BtnIniciarSesion.setBackground(new java.awt.Color(255, 254, 255));
@@ -129,8 +134,12 @@ public class MenuInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnSalirActionPerformed
 
     private void BtnCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCrearCuentaActionPerformed
-        ctrl.crearcuenta(BtnCrearCuenta, this);
+        ctrl.btncrearcuenta(BtnCrearCuenta, this);
     }//GEN-LAST:event_BtnCrearCuentaActionPerformed
+
+    private void BtnGinecologaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGinecologaActionPerformed
+        ctrl.btnginecologa(BtnGinecologa, this);
+    }//GEN-LAST:event_BtnGinecologaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnCrearCuenta;
