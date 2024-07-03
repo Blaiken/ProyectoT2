@@ -22,7 +22,7 @@ public class MenuUsuaria extends javax.swing.JFrame {
         BtnHistorial = new javax.swing.JButton();
         BtnEditarPerfil = new javax.swing.JButton();
         BtnEditarPerfil1 = new javax.swing.JButton();
-        BtnEditarPerfil2 = new javax.swing.JButton();
+        BtnMenuInicio = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,18 +39,38 @@ public class MenuUsuaria extends javax.swing.JFrame {
         BtnCicloMenstrual.setBackground(new java.awt.Color(255, 254, 255));
         BtnCicloMenstrual.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         BtnCicloMenstrual.setText("Ciclo Menstrual");
+        BtnCicloMenstrual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCicloMenstrualActionPerformed(evt);
+            }
+        });
 
         BtnCambiosySintomas.setBackground(new java.awt.Color(255, 254, 255));
         BtnCambiosySintomas.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         BtnCambiosySintomas.setText("Cambios y Sintomas");
+        BtnCambiosySintomas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCambiosySintomasActionPerformed(evt);
+            }
+        });
 
         BtnGinecologa.setBackground(new java.awt.Color(255, 254, 255));
         BtnGinecologa.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         BtnGinecologa.setText("Ginecóloga");
+        BtnGinecologa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGinecologaActionPerformed(evt);
+            }
+        });
 
         BtnHistorial.setBackground(new java.awt.Color(255, 254, 255));
         BtnHistorial.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         BtnHistorial.setText("Historial");
+        BtnHistorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnHistorialActionPerformed(evt);
+            }
+        });
 
         BtnEditarPerfil.setBackground(new java.awt.Color(255, 254, 255));
         BtnEditarPerfil.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -65,9 +85,14 @@ public class MenuUsuaria extends javax.swing.JFrame {
             }
         });
 
-        BtnEditarPerfil2.setBackground(new java.awt.Color(255, 254, 255));
-        BtnEditarPerfil2.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        BtnEditarPerfil2.setText("Menú inicio");
+        BtnMenuInicio.setBackground(new java.awt.Color(255, 254, 255));
+        BtnMenuInicio.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        BtnMenuInicio.setText("Menú inicio");
+        BtnMenuInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMenuInicioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -85,7 +110,7 @@ public class MenuUsuaria extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BtnEditarPerfil2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnMenuInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BtnEditarPerfil1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -107,7 +132,7 @@ public class MenuUsuaria extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnEditarPerfil1)
-                    .addComponent(BtnEditarPerfil2))
+                    .addComponent(BtnMenuInicio))
                 .addContainerGap())
         );
 
@@ -129,14 +154,34 @@ public class MenuUsuaria extends javax.swing.JFrame {
         ctrl.salir();
     }//GEN-LAST:event_BtnEditarPerfil1ActionPerformed
 
+    private void BtnCicloMenstrualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCicloMenstrualActionPerformed
+        ctrl.btnmenuusuaria_a_ciclomenstrual(BtnCicloMenstrual, this);
+    }//GEN-LAST:event_BtnCicloMenstrualActionPerformed
+
+    private void BtnCambiosySintomasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCambiosySintomasActionPerformed
+        ctrl.btnmenuusuaria_a_sintomasycambios(BtnCambiosySintomas, this);
+    }//GEN-LAST:event_BtnCambiosySintomasActionPerformed
+
+    private void BtnGinecologaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGinecologaActionPerformed
+        ctrl.btnmenuusuaria_a_ginecologa(BtnGinecologa, this);
+    }//GEN-LAST:event_BtnGinecologaActionPerformed
+
+    private void BtnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHistorialActionPerformed
+        ctrl.btnmenuusuaria_a_historial(BtnHistorial, this);
+    }//GEN-LAST:event_BtnHistorialActionPerformed
+
+    private void BtnMenuInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMenuInicioActionPerformed
+        ctrl.btnmenuusuaria_a_menuinicio(BtnMenuInicio, this);
+    }//GEN-LAST:event_BtnMenuInicioActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnCambiosySintomas;
     private javax.swing.JButton BtnCicloMenstrual;
     private javax.swing.JButton BtnEditarPerfil;
     private javax.swing.JButton BtnEditarPerfil1;
-    private javax.swing.JButton BtnEditarPerfil2;
     private javax.swing.JButton BtnGinecologa;
     private javax.swing.JButton BtnHistorial;
+    private javax.swing.JButton BtnMenuInicio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

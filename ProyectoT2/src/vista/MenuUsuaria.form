@@ -62,7 +62,7 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="BtnEditarPerfil2" min="-2" pref="130" max="-2" attributes="0"/>
+                  <Component id="BtnMenuInicio" min="-2" pref="130" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="BtnEditarPerfil1" min="-2" pref="130" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -86,7 +86,7 @@
                   <EmptySpace pref="34" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="BtnEditarPerfil1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="BtnEditarPerfil2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BtnMenuInicio" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -124,6 +124,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Ciclo Menstrual"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnCicloMenstrualActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BtnCambiosySintomas">
           <Properties>
@@ -135,6 +138,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cambios y Sintomas"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnCambiosySintomasActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BtnGinecologa">
           <Properties>
@@ -146,6 +152,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Ginec&#xf3;loga"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnGinecologaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BtnHistorial">
           <Properties>
@@ -157,6 +166,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Historial"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnHistorialActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BtnEditarPerfil">
           <Properties>
@@ -183,7 +195,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnEditarPerfil1ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="BtnEditarPerfil2">
+        <Component class="javax.swing.JButton" name="BtnMenuInicio">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="fe" red="ff" type="rgb"/>
@@ -193,6 +205,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Men&#xfa; inicio"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnMenuInicioActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
