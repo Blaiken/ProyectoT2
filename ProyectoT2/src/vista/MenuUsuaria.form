@@ -180,6 +180,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Editar perfil"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnEditarPerfilActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BtnEditarPerfil1">
           <Properties>

@@ -1,13 +1,17 @@
 package controlador;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
 import vista.CicloMenstrual;
 import vista.MenuInicio;
 import vista.DatosPersonales;
+import vista.EditarPerfil;
 import vista.Ginecologa;
 import vista.HistorialCiclo;
 import vista.MenuUsuaria;
 import vista.SintomasyCambios;
+import vista.Confidencialidad;
 
 public class controlador {
     
@@ -43,6 +47,15 @@ public class controlador {
         mu.setLocationRelativeTo(null);
         mu.setVisible(true);
         dp.setVisible(false);
+    }
+    
+    public void btnlimpiardatospersonales(JTextField TextNombre, JComboBox CboxAno, JComboBox CboxMes, JComboBox CboxDia,JTextField TextPeso, JTextField TextEstatura){
+        TextNombre.setText("");
+        CboxAno.setSelectedItem("Año");
+        CboxMes.setSelectedItem("Mes");
+        CboxDia.setSelectedItem("Día");
+        TextPeso.setText("");
+        TextEstatura.setText("");
     }
     
     // Vista - Ginecologa
@@ -89,12 +102,29 @@ public class controlador {
         mu.setVisible(false);
     }
     
+    public void btnmenuusuaria_a_editarperfil(JButton BtnEditarPerfil, MenuUsuaria mu){
+        EditarPerfil ep = new EditarPerfil();
+        ep.setLocationRelativeTo(null);
+        ep.setVisible(true);
+        mu.setVisible(false);
+    }
+    
     // Vista - CicloMenstrual
     public void btnciclomenstrual_a_menuusuaria(JButton BtnVolver, CicloMenstrual cm){
         MenuUsuaria mu = new MenuUsuaria();
         mu.setLocationRelativeTo(null);
         mu.setVisible(true);
         cm.setVisible(false);
+    }
+    
+    public void btnlimpiarciclomenstrual(JComboBox CboxAnoInicio, JComboBox CboxMesInicio, JComboBox CboxDiaInicio, JComboBox CboxAnoFinal, JComboBox CboxMesFinal, JComboBox CboxDiaFinal, JComboBox CboxIntensidadFlujo){
+        CboxAnoInicio.setSelectedItem("Año");
+        CboxMesInicio.setSelectedItem("Mes");
+        CboxDiaInicio.setSelectedItem("Día");
+        CboxAnoFinal.setSelectedItem("Año");
+        CboxMesFinal.setSelectedItem("Mes");
+        CboxDiaFinal.setSelectedItem("Día");
+        CboxIntensidadFlujo.setSelectedItem("Ninguna");
     }
     
     // Vista - SintomasyCambios
@@ -105,11 +135,43 @@ public class controlador {
         syc.setVisible(false);
     }
     
+    public void btnlimpiarsintomasycambios(JComboBox CboxTipo, JComboBox CboxIntensidad, JComboBox CboxDurabilidad, JComboBox CboxHumor, JComboBox CboxTipoDolor, JComboBox CboxSensibilidadEmocional){
+        CboxTipo.setSelectedItem("Ninguno");
+        CboxIntensidad.setSelectedItem("Ninguno");
+        CboxDurabilidad.setSelectedItem("Ninguno");
+        CboxHumor.setSelectedItem("Ninguno");
+        CboxTipoDolor.setSelectedItem("Ninguno");
+        CboxSensibilidadEmocional.setSelectedItem("Ninguna");
+    }
+    
     // Vista - HistorialCiclo
     public void btnhistorialciclos_a_menuusuaria(JButton BtnVolver, HistorialCiclo hc){
         MenuUsuaria mu = new MenuUsuaria();
         mu.setLocationRelativeTo(null);
         mu.setVisible(true);
         hc.setVisible(false);
+    }
+    
+    // Vista - EditarPerfil
+    public void btneditarperfil_a_menuusuaria(JButton BtnVolver, EditarPerfil ep){
+        MenuUsuaria mu = new MenuUsuaria();
+        mu.setLocationRelativeTo(null);
+        mu.setVisible(true);
+        ep.setVisible(false);
+    }
+    
+    public void btnprivacidad_a_confidencialidad(JButton BtnConfidencialidad, EditarPerfil ep){
+        Confidencialidad con = new Confidencialidad();
+        con.setLocationRelativeTo(null);
+        con.setVisible(true);
+        ep.setVisible(false);
+    }
+    
+    // Vista - Confidencialidad
+    public void btnconfidencialidad_a_editarperfil(JButton BtnVolver, Confidencialidad con){
+        MenuUsuaria mu = new MenuUsuaria();
+        mu.setLocationRelativeTo(null);
+        mu.setVisible(true);
+        con.setVisible(false);
     }
 }

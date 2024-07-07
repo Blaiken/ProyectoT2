@@ -75,6 +75,11 @@ public class MenuUsuaria extends javax.swing.JFrame {
         BtnEditarPerfil.setBackground(new java.awt.Color(255, 254, 255));
         BtnEditarPerfil.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         BtnEditarPerfil.setText("Editar perfil");
+        BtnEditarPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEditarPerfilActionPerformed(evt);
+            }
+        });
 
         BtnEditarPerfil1.setBackground(new java.awt.Color(255, 254, 255));
         BtnEditarPerfil1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -173,6 +178,10 @@ public class MenuUsuaria extends javax.swing.JFrame {
     private void BtnMenuInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMenuInicioActionPerformed
         ctrl.btnmenuusuaria_a_menuinicio(BtnMenuInicio, this);
     }//GEN-LAST:event_BtnMenuInicioActionPerformed
+
+    private void BtnEditarPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEditarPerfilActionPerformed
+        ctrl.btnmenuusuaria_a_editarperfil(BtnEditarPerfil, this);
+    }//GEN-LAST:event_BtnEditarPerfilActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnCambiosySintomas;
