@@ -126,7 +126,7 @@ public class MenuInicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIniciarSesionActionPerformed
-        // TODO add your handling code here:
+        ctrl.btniniciarsesion(BtnIniciarSesion, this);
     }//GEN-LAST:event_BtnIniciarSesionActionPerformed
 
     private void BtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalirActionPerformed

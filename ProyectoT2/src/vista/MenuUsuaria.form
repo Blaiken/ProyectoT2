@@ -54,7 +54,6 @@
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="BtnEditarPerfil" min="-2" pref="200" max="-2" attributes="0"/>
                       <Component id="BtnHistorial" min="-2" pref="200" max="-2" attributes="0"/>
-                      <Component id="BtnGinecologa" min="-2" pref="200" max="-2" attributes="0"/>
                       <Component id="BtnCambiosySintomas" min="-2" pref="200" max="-2" attributes="0"/>
                       <Component id="BtnCicloMenstrual" min="-2" pref="200" max="-2" attributes="0"/>
                   </Group>
@@ -73,15 +72,13 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jLabel1" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Component id="BtnCicloMenstrual" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Component id="BtnCambiosySintomas" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="BtnGinecologa" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   <Component id="BtnHistorial" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   <Component id="BtnEditarPerfil" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace pref="34" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -140,20 +137,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnCambiosySintomasActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="BtnGinecologa">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="fe" red="ff" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="16" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Ginec&#xf3;loga"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnGinecologaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BtnHistorial">

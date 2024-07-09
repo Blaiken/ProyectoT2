@@ -1,10 +1,12 @@
 package vista;
 
 import controlador.controlador;
+import controlador.validaciones;
 
 public class CicloMenstrual extends javax.swing.JFrame {
     
     controlador ctrl = new controlador();
+    validaciones val = new validaciones();
 
     public CicloMenstrual() {
         initComponents();
@@ -27,7 +29,7 @@ public class CicloMenstrual extends javax.swing.JFrame {
         CboxMesFinal = new javax.swing.JComboBox<>();
         CboxDiaFinal = new javax.swing.JComboBox<>();
         BtnVolver = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        BtnGuardar = new javax.swing.JButton();
         BtnLimpiar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -50,7 +52,7 @@ public class CicloMenstrual extends javax.swing.JFrame {
         jLabel3.setText("Fecha final:");
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel4.setText("Intensidad flujo:");
+        jLabel4.setText("Intensidad de flujo:");
 
         CboxAnoInicio.setBackground(new java.awt.Color(255, 254, 255));
         CboxAnoInicio.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
@@ -59,10 +61,15 @@ public class CicloMenstrual extends javax.swing.JFrame {
         CboxMesInicio.setBackground(new java.awt.Color(255, 254, 255));
         CboxMesInicio.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         CboxMesInicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mes", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Noviembre", "Diciembre" }));
+        CboxMesInicio.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                CboxMesInicioItemStateChanged(evt);
+            }
+        });
 
         CboxDiaInicio.setBackground(new java.awt.Color(255, 254, 255));
         CboxDiaInicio.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        CboxDiaInicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        CboxDiaInicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Día    " }));
 
         CboxIntensidadFlujo.setBackground(new java.awt.Color(255, 254, 255));
         CboxIntensidadFlujo.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
@@ -75,10 +82,15 @@ public class CicloMenstrual extends javax.swing.JFrame {
         CboxMesFinal.setBackground(new java.awt.Color(255, 254, 255));
         CboxMesFinal.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         CboxMesFinal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mes", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Noviembre", "Diciembre" }));
+        CboxMesFinal.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                CboxMesFinalItemStateChanged(evt);
+            }
+        });
 
         CboxDiaFinal.setBackground(new java.awt.Color(255, 254, 255));
         CboxDiaFinal.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        CboxDiaFinal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        CboxDiaFinal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Día    " }));
 
         BtnVolver.setBackground(new java.awt.Color(255, 254, 255));
         BtnVolver.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -91,11 +103,16 @@ public class CicloMenstrual extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 254, 255));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        jButton2.setText("Guardar");
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BtnGuardar.setBackground(new java.awt.Color(255, 254, 255));
+        BtnGuardar.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        BtnGuardar.setText("Guardar");
+        BtnGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnGuardar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BtnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGuardarActionPerformed(evt);
+            }
+        });
 
         BtnLimpiar.setBackground(new java.awt.Color(255, 254, 255));
         BtnLimpiar.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -112,14 +129,14 @@ public class CicloMenstrual extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(BtnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -177,7 +194,7 @@ public class CicloMenstrual extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BtnVolver)
-                    .addComponent(jButton2)
+                    .addComponent(BtnGuardar)
                     .addComponent(BtnLimpiar))
                 .addGap(10, 10, 10))
         );
@@ -204,7 +221,20 @@ public class CicloMenstrual extends javax.swing.JFrame {
         ctrl.btnlimpiarciclomenstrual(CboxAnoInicio, CboxMesInicio, CboxDiaInicio, CboxAnoFinal, CboxMesFinal, CboxDiaFinal, CboxIntensidadFlujo);
     }//GEN-LAST:event_BtnLimpiarActionPerformed
 
+    private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
+        val.BtnGuardarCicloMenstrual(BtnGuardar, CboxAnoInicio, CboxMesInicio, CboxDiaInicio, CboxDiaFinal, CboxMesFinal, CboxDiaFinal, CboxIntensidadFlujo, this);
+    }//GEN-LAST:event_BtnGuardarActionPerformed
+
+    private void CboxMesInicioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CboxMesInicioItemStateChanged
+        ctrl.CboxMesDia(CboxMesInicio, CboxDiaInicio, evt);
+    }//GEN-LAST:event_CboxMesInicioItemStateChanged
+
+    private void CboxMesFinalItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CboxMesFinalItemStateChanged
+        ctrl.CboxMesDia(CboxMesFinal, CboxDiaFinal, evt);
+    }//GEN-LAST:event_CboxMesFinalItemStateChanged
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnGuardar;
     private javax.swing.JButton BtnLimpiar;
     private javax.swing.JButton BtnVolver;
     private javax.swing.JComboBox<String> CboxAnoFinal;
@@ -214,7 +244,6 @@ public class CicloMenstrual extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CboxIntensidadFlujo;
     private javax.swing.JComboBox<String> CboxMesFinal;
     private javax.swing.JComboBox<String> CboxMesInicio;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

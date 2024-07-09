@@ -1,10 +1,12 @@
 package vista;
 
 import controlador.controlador;
+import controlador.validaciones;
 
 public class SintomasyCambios extends javax.swing.JFrame {
     
     controlador ctrl = new controlador();
+    validaciones val = new validaciones();
 
     public SintomasyCambios() {
         initComponents();
@@ -29,7 +31,7 @@ public class SintomasyCambios extends javax.swing.JFrame {
         CboxSensibilidadEmocional = new javax.swing.JComboBox<>();
         CboxHumor = new javax.swing.JComboBox<>();
         CboxTipoDolor = new javax.swing.JComboBox<>();
-        jButton2 = new javax.swing.JButton();
+        BtnGuardar = new javax.swing.JButton();
         BtnVolver = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
@@ -89,11 +91,16 @@ public class SintomasyCambios extends javax.swing.JFrame {
         CboxTipoDolor.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         CboxTipoDolor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ninguno", "Cabeza", "Espalda", "Abdominal" }));
 
-        jButton2.setBackground(new java.awt.Color(255, 254, 255));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        jButton2.setText("Guardar");
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BtnGuardar.setBackground(new java.awt.Color(255, 254, 255));
+        BtnGuardar.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        BtnGuardar.setText("Guardar");
+        BtnGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnGuardar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BtnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGuardarActionPerformed(evt);
+            }
+        });
 
         BtnVolver.setBackground(new java.awt.Color(255, 254, 255));
         BtnVolver.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -161,7 +168,7 @@ public class SintomasyCambios extends javax.swing.JFrame {
                         .addGap(38, 38, 38)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -197,7 +204,7 @@ public class SintomasyCambios extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BtnVolver)
-                    .addComponent(jButton2)
+                    .addComponent(BtnGuardar)
                     .addComponent(jButton3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -224,7 +231,12 @@ public class SintomasyCambios extends javax.swing.JFrame {
         ctrl.btnlimpiarsintomasycambios(CboxTipo, CboxIntensidad, CboxDurabilidad, CboxHumor, CboxTipoDolor, CboxSensibilidadEmocional);
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
+        val.BtnGuardarSintomasyCambios(BtnGuardar, CboxTipo, CboxIntensidad, CboxDurabilidad, CboxHumor, CboxTipoDolor, CboxSensibilidadEmocional, this);
+    }//GEN-LAST:event_BtnGuardarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnGuardar;
     private javax.swing.JButton BtnVolver;
     private javax.swing.JComboBox<String> CboxDurabilidad;
     private javax.swing.JComboBox<String> CboxHumor;
@@ -232,7 +244,6 @@ public class SintomasyCambios extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CboxSensibilidadEmocional;
     private javax.swing.JComboBox<String> CboxTipo;
     private javax.swing.JComboBox<String> CboxTipoDolor;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

@@ -2,6 +2,8 @@ package vista;
 
 import controlador.controlador;
 import controlador.validaciones;
+import java.awt.event.ItemEvent;
+import javax.swing.DefaultComboBoxModel;
 
 public class DatosPersonales extends javax.swing.JFrame {
     
@@ -68,10 +70,15 @@ public class DatosPersonales extends javax.swing.JFrame {
         CboxMes.setBackground(new java.awt.Color(255, 254, 255));
         CboxMes.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         CboxMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mes", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Noviembre", "Diciembre" }));
+        CboxMes.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                CboxMesItemStateChanged(evt);
+            }
+        });
 
         CboxDia.setBackground(new java.awt.Color(255, 254, 255));
         CboxDia.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        CboxDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        CboxDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Día    " }));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel4.setText("Peso:");
@@ -242,7 +249,7 @@ public class DatosPersonales extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnAtrasActionPerformed
 
     private void BtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSiguienteActionPerformed
-        val.BtnValidacion(BtnSiguiente, TextNombre, TextPeso, TextEstatura, this);
+        val.BtnValidacionDP(BtnSiguiente, TextNombre, CboxAno, CboxMes, CboxDia, TextPeso, TextEstatura, this);
     }//GEN-LAST:event_BtnSiguienteActionPerformed
 
     private void BtnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLimpiarActionPerformed
@@ -256,6 +263,10 @@ public class DatosPersonales extends javax.swing.JFrame {
     private void TextEstaturaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextEstaturaKeyTyped
         val.ReglaN3(TextEstatura, evt);
     }//GEN-LAST:event_TextEstaturaKeyTyped
+
+    private void CboxMesItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CboxMesItemStateChanged
+        ctrl.CboxMesDia(CboxMes, CboxDia, evt);
+    }//GEN-LAST:event_CboxMesItemStateChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAtras;

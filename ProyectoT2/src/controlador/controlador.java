@@ -1,5 +1,7 @@
 package controlador;
 
+import java.awt.event.ItemEvent;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
@@ -12,6 +14,8 @@ import vista.HistorialCiclo;
 import vista.MenuUsuaria;
 import vista.SintomasyCambios;
 import vista.Confidencialidad;
+import vista.IniciarSesion;
+import vista.Resultados;
 
 public class controlador {
     
@@ -20,6 +24,13 @@ public class controlador {
         DatosPersonales dp = new DatosPersonales();
         dp.setLocationRelativeTo(null);
         dp.setVisible(true);
+        MI.setVisible(false);
+    }
+    
+    public void btniniciarsesion(JButton BtnIniciarSesion, MenuInicio MI){
+        IniciarSesion is = new IniciarSesion();
+        is.setLocationRelativeTo(null);
+        is.setVisible(true);
         MI.setVisible(false);
     }
     
@@ -56,6 +67,135 @@ public class controlador {
         CboxDia.setSelectedItem("Día");
         TextPeso.setText("");
         TextEstatura.setText("");
+    }
+    
+    public void CboxMesDia(JComboBox CboxMes, JComboBox CboxDia, java.awt.event.ItemEvent evt){
+        if(evt.getStateChange()==ItemEvent.SELECTED){
+            if(CboxMes.getSelectedIndex()>=0){
+                CboxDia.setModel(new DefaultComboBoxModel(Dias(CboxMes.getSelectedItem().toString())));
+            }
+        }
+    }
+    
+    public String[]Dias(String datos){
+        String[]informacion = new String[0];
+        if(datos.equalsIgnoreCase("Mes")){
+            informacion = new String[1];
+            informacion[0]="Día    ";
+        }
+        if(datos.equalsIgnoreCase("Enero")){
+            informacion = new String[32];
+            informacion[0]="Día    ";
+            for(int i = 1; i <= 31; i++){
+                String numero = Integer.toString(i);
+                informacion[i]= numero;
+            }
+        }
+        if(datos.equalsIgnoreCase("Febrero")){
+            informacion = new String[29];
+            informacion[0]="Día    ";
+            for(int i = 1; i <= 28; i++){
+                String numero = Integer.toString(i);
+                informacion[i]= numero;
+            }
+        }
+        if(datos.equalsIgnoreCase("Marzo")){
+            informacion = new String[32];
+            informacion[0]="Día    ";
+            for(int i = 1; i <= 31; i++){
+                String numero = Integer.toString(i);
+                informacion[i]= numero;
+            }
+        }
+        if(datos.equalsIgnoreCase("Abril")){
+            informacion = new String[31];
+            informacion[0]="Día    ";
+            for(int i = 1; i <= 30; i++){
+                String numero = Integer.toString(i);
+                informacion[i]= numero;
+            }
+        }
+        if(datos.equalsIgnoreCase("Mayo")){
+            informacion = new String[32];
+            informacion[0]="Día    ";
+            for(int i = 1; i <= 31; i++){
+                String numero = Integer.toString(i);
+                informacion[i]= numero;
+            }
+        }
+        if(datos.equalsIgnoreCase("Junio")){
+            informacion = new String[31];
+            informacion[0]="Día    ";
+            for(int i = 1; i <= 30; i++){
+                String numero = Integer.toString(i);
+                informacion[i]= numero;
+            }
+        }
+        if(datos.equalsIgnoreCase("Julio")){
+            informacion = new String[32];
+            informacion[0]="Día    ";
+            for(int i = 1; i <= 31; i++){
+                String numero = Integer.toString(i);
+                informacion[i]= numero;
+            }
+        }
+        if(datos.equalsIgnoreCase("Agosto")){
+            informacion = new String[32];
+            informacion[0]="Día    ";
+            for(int i = 1; i <= 31; i++){
+                String numero = Integer.toString(i);
+                informacion[i]= numero;
+            }
+        }
+        if(datos.equalsIgnoreCase("Septiembre")){
+            informacion = new String[31];
+            informacion[0]="Día    ";
+            for(int i = 1; i <= 30; i++){
+                String numero = Integer.toString(i);
+                informacion[i]= numero;
+            }
+        }
+        if(datos.equalsIgnoreCase("Octubre")){
+            informacion = new String[32];
+            informacion[0]="Día    ";
+            for(int i = 1; i <= 31; i++){
+                String numero = Integer.toString(i);
+                informacion[i]= numero;
+            }
+        }
+        if(datos.equalsIgnoreCase("Noviembre")){
+            informacion = new String[31];
+            informacion[0]="Día    ";
+            for(int i = 1; i <= 30; i++){
+                String numero = Integer.toString(i);
+                informacion[i]= numero;
+            }
+        }
+        if(datos.equalsIgnoreCase("Diciembre")){
+            informacion = new String[32];
+            informacion[0]="Día    ";
+            for(int i = 1; i <= 31; i++){
+                String numero = Integer.toString(i);
+                informacion[i]= numero;
+            }
+        }
+        
+        return informacion;
+    }
+    
+    // Vista - IniciarSesión
+    public void btniniciarsesion_a_menuinicio(JButton BtnAtras, IniciarSesion is){
+        MenuInicio mi = new MenuInicio();
+        mi.setLocationRelativeTo(null);
+        mi.setVisible(true);
+        is.setVisible(false);
+    }
+    
+    public void btnlimpiariniciarsesion(JButton BtnLimpia, JTextField TextNombre, JComboBox CboxAno, JComboBox CboxMes, JComboBox CboxDia){
+        TextNombre.setText("");
+        CboxAno.setSelectedItem("Año");
+        CboxMes.setSelectedItem("Mes");
+        CboxDia.setSelectedItem("Día");
     }
     
     // Vista - Ginecologa
@@ -125,6 +265,14 @@ public class controlador {
         CboxMesFinal.setSelectedItem("Mes");
         CboxDiaFinal.setSelectedItem("Día");
         CboxIntensidadFlujo.setSelectedItem("Ninguna");
+    }
+    
+    // Vista - Resultados
+    public void btnresultados_a_menuusuaria(JButton BtnAtras, Resultados res){
+        MenuUsuaria mu = new MenuUsuaria();
+        mu.setLocationRelativeTo(null);
+        mu.setVisible(true);
+        res.setVisible(false);
     }
     
     // Vista - SintomasyCambios
