@@ -1,21 +1,8 @@
 package controlador;
 
 import java.awt.event.ItemEvent;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JTextField;
-import vista.CicloMenstrual;
-import vista.MenuInicio;
-import vista.DatosPersonales;
-import vista.EditarPerfil;
-import vista.Ginecologa;
-import vista.HistorialCiclo;
-import vista.MenuUsuaria;
-import vista.SintomasyCambios;
-import vista.Confidencialidad;
-import vista.IniciarSesion;
-import vista.Resultados;
+import javax.swing.*;
+import vista.*;
 
 public class controlador {
     
@@ -77,7 +64,7 @@ public class controlador {
         }
     }
     
-    public String[]Dias(String datos){
+    private String[]Dias(String datos){
         String[]informacion = new String[0];
         if(datos.equalsIgnoreCase("Mes")){
             informacion = new String[1];
@@ -221,10 +208,10 @@ public class controlador {
         mu.setVisible(false);
     }
     
-    public void btnmenuusuaria_a_ginecologa(JButton BtnGinecologa, MenuUsuaria mu){
-        Ginecologa gi = new Ginecologa();
-        gi.setLocationRelativeTo(null);
-        gi.setVisible(true);
+    public void btnmenuusuaria_a_educacion(JButton BtnGinecologa, MenuUsuaria mu){
+        Educacion ed = new Educacion();
+        ed.setLocationRelativeTo(null);
+        ed.setVisible(true);
         mu.setVisible(false);
     }
     
@@ -290,6 +277,14 @@ public class controlador {
         CboxHumor.setSelectedItem("Ninguno");
         CboxTipoDolor.setSelectedItem("Ninguno");
         CboxSensibilidadEmocional.setSelectedItem("Ninguna");
+    }
+    
+    // Vista - Educacion
+    public void btneducacion_a_menusuaria(JButton BtnVolver, Educacion edu){
+        MenuUsuaria mu = new MenuUsuaria();
+        mu.setLocationRelativeTo(null);
+        mu.setVisible(true);
+        edu.setVisible(false);
     }
     
     // Vista - HistorialCiclo

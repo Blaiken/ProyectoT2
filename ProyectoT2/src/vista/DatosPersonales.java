@@ -2,8 +2,6 @@ package vista;
 
 import controlador.controlador;
 import controlador.validaciones;
-import java.awt.event.ItemEvent;
-import javax.swing.DefaultComboBoxModel;
 
 public class DatosPersonales extends javax.swing.JFrame {
     

@@ -1,10 +1,12 @@
 package vista;
 
 import controlador.controlador;
+import controlador.validaciones;
 
 public class EditarPerfil extends javax.swing.JFrame {
     
     controlador ctrl = new controlador();
+    validaciones val = new validaciones();
 
     public EditarPerfil() {
         initComponents();
@@ -57,6 +59,11 @@ public class EditarPerfil extends javax.swing.JFrame {
 
         TextPeso.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         TextPeso.setText("00,00");
+        TextPeso.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TextPesoKeyTyped(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jLabel5.setText("kg");
@@ -76,6 +83,11 @@ public class EditarPerfil extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(255, 254, 255));
         jButton2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton2.setText("Guardar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         BtnPrivacidad.setBackground(new java.awt.Color(255, 254, 255));
         BtnPrivacidad.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -92,6 +104,11 @@ public class EditarPerfil extends javax.swing.JFrame {
 
         TextEstatura.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         TextEstatura.setText("0,00");
+        TextEstatura.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TextEstaturaKeyTyped(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jLabel7.setText("cm");
@@ -114,28 +131,30 @@ public class EditarPerfil extends javax.swing.JFrame {
                                 .addGap(19, 19, 19)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel6)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel6)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(TextEstatura, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(32, 32, 32))
                                         .addComponent(jLabel2))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(124, 124, 124)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TextFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(TextEstatura, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(TextPeso, javax.swing.GroupLayout.Alignment.LEADING))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel5)
-                                            .addComponent(jLabel7)))))
+                                .addComponent(TextFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(73, 73, 73)
                                 .addComponent(TextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(108, 108, 108)
-                                .addComponent(BtnPrivacidad, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(BtnPrivacidad, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(116, 116, 116)
+                                .addComponent(TextPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel7))))
                         .addGap(0, 87, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -191,6 +210,18 @@ public class EditarPerfil extends javax.swing.JFrame {
     private void BtnPrivacidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPrivacidadActionPerformed
         ctrl.btnprivacidad_a_confidencialidad(BtnPrivacidad, this);
     }//GEN-LAST:event_BtnPrivacidadActionPerformed
+
+    private void TextPesoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextPesoKeyTyped
+        val.ReglaN3(TextPeso, evt);
+    }//GEN-LAST:event_TextPesoKeyTyped
+
+    private void TextEstaturaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextEstaturaKeyTyped
+        val.ReglaN3(TextEstatura, evt);
+    }//GEN-LAST:event_TextEstaturaKeyTyped
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        val.BtnGuardarEditarPerfil(BtnAtras, TextPeso, TextEstatura);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAtras;

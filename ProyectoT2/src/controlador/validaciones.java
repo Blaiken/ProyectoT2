@@ -1,15 +1,7 @@
 package controlador;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import vista.CicloMenstrual;
-import vista.DatosPersonales;
-import vista.IniciarSesion;
-import vista.MenuUsuaria;
-import vista.Resultados;
-import vista.SintomasyCambios;
+import javax.swing.*;
+import vista.*;
 
 public class validaciones {
     
@@ -281,5 +273,27 @@ public class validaciones {
                     "¡ERROR EN SENSIBILIDAD EMOCIONAL!",
                     JOptionPane.WARNING_MESSAGE);
         }
+    }
+    
+    public void BtnGuardarEditarPerfil(JButton BtnGuardar, JTextField TextPeso, JTextField TextEstatura){
+        
+        if(TextPeso.getText().length() >= 5 && TextEstatura.getText().length() >= 5){
+            JOptionPane.showMessageDialog(null,
+                    "Guardado con éxito los cambios.",
+                    "¡LISTO!",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
+        else if (TextPeso.getText().length() < 5) {
+            JOptionPane.showMessageDialog(null,
+                    "Necesitas ingresar al menos 5 números.",
+                    "¡ERROR EN PESO!",
+                    JOptionPane.WARNING_MESSAGE);
+            }
+        else if (TextEstatura.getText().length() < 5) {
+            JOptionPane.showMessageDialog(null,
+                    "Necesitas ingresar al menos 5 números.",
+                    "¡ERROR EN ESTATURA!",
+                    JOptionPane.WARNING_MESSAGE);
+            }
     }
 }
