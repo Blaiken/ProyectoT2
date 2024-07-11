@@ -18,7 +18,6 @@ public class MenuUsuaria extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         BtnCicloMenstrual = new javax.swing.JButton();
         BtnCambiosySintomas = new javax.swing.JButton();
-        BtnHistorial = new javax.swing.JButton();
         BtnEditarPerfil = new javax.swing.JButton();
         BtnEditarPerfil1 = new javax.swing.JButton();
         BtnMenuInicio = new javax.swing.JButton();
@@ -51,15 +50,6 @@ public class MenuUsuaria extends javax.swing.JFrame {
         BtnCambiosySintomas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnCambiosySintomasActionPerformed(evt);
-            }
-        });
-
-        BtnHistorial.setBackground(new java.awt.Color(255, 254, 255));
-        BtnHistorial.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        BtnHistorial.setText("Historial");
-        BtnHistorial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnHistorialActionPerformed(evt);
             }
         });
 
@@ -115,7 +105,6 @@ public class MenuUsuaria extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(BtnEducación, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnEditarPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnCambiosySintomas, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnCicloMenstrual, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -124,17 +113,15 @@ public class MenuUsuaria extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
+                .addGap(34, 34, 34)
                 .addComponent(BtnCicloMenstrual, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(36, 36, 36)
                 .addComponent(BtnCambiosySintomas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(30, 30, 30)
                 .addComponent(BtnEducación, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(BtnHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addComponent(BtnEditarPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnEditarPerfil1)
                     .addComponent(BtnMenuInicio))
@@ -167,10 +154,6 @@ public class MenuUsuaria extends javax.swing.JFrame {
         ctrl.btnmenuusuaria_a_sintomasycambios(BtnCambiosySintomas, this);
     }//GEN-LAST:event_BtnCambiosySintomasActionPerformed
 
-    private void BtnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHistorialActionPerformed
-        ctrl.btnmenuusuaria_a_historial(BtnHistorial, this);
-    }//GEN-LAST:event_BtnHistorialActionPerformed
-
     private void BtnMenuInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMenuInicioActionPerformed
         ctrl.btnmenuusuaria_a_menuinicio(BtnMenuInicio, this);
     }//GEN-LAST:event_BtnMenuInicioActionPerformed
@@ -180,7 +163,7 @@ public class MenuUsuaria extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnEditarPerfilActionPerformed
 
     private void BtnEducaciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEducaciónActionPerformed
-        ctrl.btnmenuusuaria_a_educacion(BtnHistorial, this);
+        ctrl.btnmenuusuaria_a_educacion(BtnEducación, this);
     }//GEN-LAST:event_BtnEducaciónActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -189,7 +172,6 @@ public class MenuUsuaria extends javax.swing.JFrame {
     private javax.swing.JButton BtnEditarPerfil;
     private javax.swing.JButton BtnEditarPerfil1;
     private javax.swing.JButton BtnEducación;
-    private javax.swing.JButton BtnHistorial;
     private javax.swing.JButton BtnMenuInicio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

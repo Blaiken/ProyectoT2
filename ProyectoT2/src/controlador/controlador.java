@@ -28,6 +28,13 @@ public class controlador {
         MI.setVisible(false);
     }
     
+    public void btnhistorial(JButton BtnHistorial, MenuInicio MI){
+        HistorialCiclo hc = new HistorialCiclo();
+        hc.setLocationRelativeTo(null);
+        hc.setVisible(true);
+        MI.setVisible(false);
+    }
+    
     public void salir(){
         System.exit(0);
     }
@@ -215,13 +222,6 @@ public class controlador {
         mu.setVisible(false);
     }
     
-    public void btnmenuusuaria_a_historial(JButton BtnHistorial, MenuUsuaria mu){
-        HistorialCiclo hc = new HistorialCiclo();
-        hc.setLocationRelativeTo(null);
-        hc.setVisible(true);
-        mu.setVisible(false);
-    }
-    
     public void btnmenuusuaria_a_menuinicio(JButton BtnMenuInicio, MenuUsuaria mu){
         MenuInicio mi = new MenuInicio();
         mi.setLocationRelativeTo(null);
@@ -288,10 +288,10 @@ public class controlador {
     }
     
     // Vista - HistorialCiclo
-    public void btnhistorialciclos_a_menuusuaria(JButton BtnVolver, HistorialCiclo hc){
-        MenuUsuaria mu = new MenuUsuaria();
-        mu.setLocationRelativeTo(null);
-        mu.setVisible(true);
+    public void btnhistorialciclo_a_menuinicio(JButton BtnVolver, HistorialCiclo hc){
+        MenuInicio mi = new MenuInicio();
+        mi.setLocationRelativeTo(null);
+        mi.setVisible(true);
         hc.setVisible(false);
     }
     

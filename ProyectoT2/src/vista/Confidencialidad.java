@@ -47,12 +47,12 @@ public class Confidencialidad extends javax.swing.JFrame {
         RbAceptados.setBackground(new java.awt.Color(255, 204, 204));
         terminosdeseguridad.add(RbAceptados);
         RbAceptados.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        RbAceptados.setText("Aceptados");
+        RbAceptados.setText("Aceptar");
 
         RBNoaceptados.setBackground(new java.awt.Color(255, 204, 204));
         terminosdeseguridad.add(RBNoaceptados);
         RBNoaceptados.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        RBNoaceptados.setText("No aceptados");
+        RBNoaceptados.setText("Denegar");
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -96,14 +96,14 @@ public class Confidencialidad extends javax.swing.JFrame {
                         .addComponent(BtnSi, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(55, 55, 55)
                         .addComponent(BtnNo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 52, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(54, 54, 54)
+                .addGap(85, 85, 85)
                 .addComponent(RbAceptados)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addGap(46, 46, 46)
                 .addComponent(RBNoaceptados)
-                .addGap(48, 48, 48))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(

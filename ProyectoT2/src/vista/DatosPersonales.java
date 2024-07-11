@@ -58,7 +58,7 @@ public class DatosPersonales extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel3.setText("Fecha nacimiento:");
+        jLabel3.setText("Fecha de nacimiento:");
 
         CboxAno.setBackground(new java.awt.Color(255, 254, 255));
         CboxAno.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N

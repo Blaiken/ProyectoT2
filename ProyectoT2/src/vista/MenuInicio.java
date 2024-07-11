@@ -20,6 +20,7 @@ public class MenuInicio extends javax.swing.JFrame {
         BtnSalir = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         BtnIniciarSesion = new javax.swing.JButton();
+        BtnGinecologa1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -80,6 +81,16 @@ public class MenuInicio extends javax.swing.JFrame {
             }
         });
 
+        BtnGinecologa1.setBackground(new java.awt.Color(255, 254, 255));
+        BtnGinecologa1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        BtnGinecologa1.setText("Historial");
+        BtnGinecologa1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnGinecologa1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGinecologa1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -89,6 +100,7 @@ public class MenuInicio extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(95, 95, 95)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BtnGinecologa1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnGinecologa, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -100,15 +112,17 @@ public class MenuInicio extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnGinecologa, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addComponent(BtnGinecologa1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -141,9 +155,14 @@ public class MenuInicio extends javax.swing.JFrame {
         ctrl.btnginecologa(BtnGinecologa, this);
     }//GEN-LAST:event_BtnGinecologaActionPerformed
 
+    private void BtnGinecologa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGinecologa1ActionPerformed
+        ctrl.btnhistorial(BtnSalir, this);
+    }//GEN-LAST:event_BtnGinecologa1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnCrearCuenta;
     private javax.swing.JButton BtnGinecologa;
+    private javax.swing.JButton BtnGinecologa1;
     private javax.swing.JButton BtnIniciarSesion;
     private javax.swing.JButton BtnSalir;
     private javax.swing.JLabel jLabel1;
