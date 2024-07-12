@@ -1,5 +1,7 @@
 package controlador;
 
+import com.toedter.calendar.JDateChooser;
+import java.util.Date;
 import javax.swing.*;
 import vista.*;
 
@@ -15,7 +17,7 @@ public class validaciones {
             evt.consume();
             JOptionPane.showMessageDialog(null,
                     "Has alcanzado el límite de caracteres.",
-                    "Error",
+                    "ERROR",
                     JOptionPane.WARNING_MESSAGE);
         }
 
@@ -29,7 +31,7 @@ public class validaciones {
             evt.consume();
             JOptionPane.showMessageDialog(null,
             "No puedes usar números ni caracteres especiales.",
-            "Error",
+            "ERROR",
             JOptionPane.WARNING_MESSAGE);  
         }
     }
@@ -42,16 +44,23 @@ public class validaciones {
         boolean borrar = rn3 == 8;
         boolean coma = rn3 == 44;
         
-        if (!(numeros || borrar || coma))
-        {
-            evt.consume();
-            JOptionPane.showMessageDialog(null,
-                    "El caracter ingresado no es un número.",
-                    "Error",
-                    JOptionPane.WARNING_MESSAGE);
+        if (!(coma || numeros || borrar)){
+        evt.consume();
+        JOptionPane.showMessageDialog(null,
+                "Solo se permite ingresar una coma o números.",
+                "Error",
+                JOptionPane.WARNING_MESSAGE);
         }
 
-        if (TextPeso.getText().length() == 6) {
+        if (coma && TextPeso.getText().contains(",")) {
+        evt.consume();
+        JOptionPane.showMessageDialog(null,
+                "El caracter ingresado ya existe.",
+                "Error",
+                JOptionPane.WARNING_MESSAGE);
+        }
+
+        if (TextPeso.getText().length() == 6){
             evt.consume();
             JOptionPane.showMessageDialog(null,
                     "Has alcanzado el límite de caracteres.",
@@ -60,13 +69,9 @@ public class validaciones {
         } 
     }
     
-    public void BtnValidacionDP(JButton BtnSiguiente, JTextField TextNombre, JComboBox Ano, JComboBox Mes, JComboBox Dia, JTextField TextPeso, JTextField TextEstatura, DatosPersonales dp){
-        
-        int AnoN = Ano.getSelectedIndex();
-        int MesN = Mes.getSelectedIndex();
-        int DiaN = Dia.getSelectedIndex();
-        
-        if(TextNombre.getText().length() >= 3 && AnoN != 0 && MesN != 0 && DiaN != 0 && TextPeso.getText().length() >= 5 && TextEstatura.getText().length() >= 5){
+    public void BtnValidacionDP(JButton BtnSiguiente, JTextField TextNombre,JDateChooser DateFechaNacimiento, JTextField TextPeso, JTextField TextEstatura, DatosPersonales dp){
+
+        if(TextNombre.getText().length() >= 3 && DateFechaNacimiento.getDate() != null && TextPeso.getText().length() >= 4 && TextEstatura.getText().length() >= 4){
             MenuUsuaria mu = new MenuUsuaria();
             mu.setLocationRelativeTo(null);
             mu.setVisible(true);
@@ -77,32 +82,20 @@ public class validaciones {
                     "Necesita un minímo de 3 letras para continuar.",
                     "¡ERROR EN NOMBRE!",
                     JOptionPane.WARNING_MESSAGE);
+        }
+        else if (DateFechaNacimiento.getDate() == null) {
+            JOptionPane.showMessageDialog(null,
+                    "Necesitas ingresar una fecha.",
+                    "¡ERROR EN FECHA DE NACIMIENTO!",
+                    JOptionPane.WARNING_MESSAGE);
         } 
-        else if (AnoN == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Necesitas ingresar un año.",
-                    "¡ERROR EN AÑO!",
-                    JOptionPane.WARNING_MESSAGE);
-        }
-        else if (MesN == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Necesitas ingresar un mes.",
-                    "¡ERROR EN MES!",
-                    JOptionPane.WARNING_MESSAGE);
-        }
-        else if (DiaN == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Necesitas ingresar un día.",
-                    "¡ERROR EN DÍA!",
-                    JOptionPane.WARNING_MESSAGE);
-        }
-        else if (TextPeso.getText().length() < 5) {
+        else if (TextPeso.getText().length() < 4) {
             JOptionPane.showMessageDialog(null,
                     "Necesitas ingresar al menos 5 números.",
                     "¡ERROR EN PESO!",
                     JOptionPane.WARNING_MESSAGE);
         } 
-        else if (TextEstatura.getText().length() < 5) {
+        else if (TextEstatura.getText().length() < 4) {
             JOptionPane.showMessageDialog(null,
                     "Necesitas ingresar al menos 5 números.",
                     "¡ERROR EN ESTATURA!",
@@ -112,13 +105,9 @@ public class validaciones {
     
     // Vista - IniciarSesion
     
-    public void BtnValidacionIS(JButton BtnIniciarSesion, JTextField TextNombre, JComboBox Ano, JComboBox Mes, JComboBox Dia, IniciarSesion is){
+    public void BtnValidacionIS(JButton BtnIniciarSesion, JTextField TextNombre, JDateChooser DateFechaNacimiento, IniciarSesion is){
         
-        int AnoN = Ano.getSelectedIndex();
-        int MesN = Mes.getSelectedIndex();
-        int DiaN = Dia.getSelectedIndex();
-        
-        if(TextNombre.getText().length() >= 3 && AnoN != 0 && MesN != 0 && DiaN != 0){
+        if(TextNombre.getText().length() >= 3 && DateFechaNacimiento.getDate() != null){
             MenuUsuaria mu = new MenuUsuaria();
             mu.setLocationRelativeTo(null);
             mu.setVisible(true);
@@ -130,41 +119,25 @@ public class validaciones {
                     "¡ERROR EN NOMBRE!",
                     JOptionPane.WARNING_MESSAGE);
         } 
-        else if (AnoN == 0) {
+        else if (DateFechaNacimiento.getDate() == null) {
             JOptionPane.showMessageDialog(null,
-                    "Necesitas ingresar un año.",
-                    "¡ERROR EN AÑO!",
-                    JOptionPane.WARNING_MESSAGE);
-        }
-        else if (MesN == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Necesitas ingresar un mes.",
-                    "¡ERROR EN MES!",
-                    JOptionPane.WARNING_MESSAGE);
-        }
-        else if (DiaN == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Necesitas ingresar un día.",
-                    "¡ERROR EN DÍA!",
+                    "Necesitas ingresar una fecha.",
+                    "¡ERROR EN FECHA DE NACIMIENTO!",
                     JOptionPane.WARNING_MESSAGE);
         }
     }
     
     // Vista - CicloMenstrual
     
-    public void BtnGuardarCicloMenstrual(JButton BtnGuardar, JComboBox AnoInicio, JComboBox MesInicio, JComboBox DiaInicio,
-            JComboBox AnoFinal, JComboBox MesFinal, JComboBox DiaFinal, JComboBox IntensidadFlujo, CicloMenstrual cm){
+    public void BtnGuardarCicloMenstrual(JButton BtnGuardar, JDateChooser FechaInicio, JDateChooser FechaFinal, JComboBox IntensidadFlujo, CicloMenstrual cm){
         
-        int AnoI = AnoInicio.getSelectedIndex();
-        int MesI = MesInicio.getSelectedIndex();
-        int DiaI = DiaInicio.getSelectedIndex();
-        int AnoF = AnoFinal.getSelectedIndex();
-        int MesF = MesFinal.getSelectedIndex();
-        int DiaF = DiaFinal.getSelectedIndex();
+        Date FI = FechaInicio.getDate();
+        Date FF = FechaFinal.getDate();
         int IntensidadFlujoN = IntensidadFlujo.getSelectedIndex();
         
-        if(AnoI != 0 && MesI != 0 && DiaI!= 0 && AnoF != 0 && MesF != 0 && DiaF != 0 && IntensidadFlujoN != 0){
-            JOptionPane.showMessageDialog(null,
+        if(FechaInicio.getDate() != null && FechaFinal.getDate() != null && IntensidadFlujoN != 0){
+            if(FF.after(FI) || FF.equals(FI)){
+               JOptionPane.showMessageDialog(null,
                     "Guardado con éxito.",
                     "¡LISTO!",
                     JOptionPane.INFORMATION_MESSAGE);
@@ -172,41 +145,24 @@ public class validaciones {
             res.setLocationRelativeTo(null);
             res.setVisible(true);
             cm.setVisible(false);
-        }
-        else if (AnoI == 0) {
+            }
+            else {
             JOptionPane.showMessageDialog(null,
-                    "Necesitas ingresar una de las opciones.",
-                    "¡ERROR EN FECHA DEL AÑO INICIAL!",
+                    "Necesitas ingresar las opciones correctas.",
+                    "¡ERROR EN FECHAS!",
+                    JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        else if (FechaInicio.getDate() == null) {
+            JOptionPane.showMessageDialog(null,
+                    "Necesitas ingresar una fecha.",
+                    "¡ERROR EN FECHA DE INICIO!",
                     JOptionPane.WARNING_MESSAGE);
         }
-        else if (MesI == 0) {
+        else if (FechaFinal.getDate() == null) {
             JOptionPane.showMessageDialog(null,
-                    "Necesitas ingresar una de las opciones.",
-                    "¡ERROR EN FECHA DEL MES INICIAL!",
-                    JOptionPane.WARNING_MESSAGE);
-        }
-        else if (DiaI == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Necesitas ingresar una de las opciones.",
-                    "¡ERROR EN FECHA DEL DÍA INICIAL!",
-                    JOptionPane.WARNING_MESSAGE);
-        }
-        else if (AnoF == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Necesitas ingresar una de las opciones.",
-                    "¡ERROR EN FECHA DEL AÑO FINAL!",
-                    JOptionPane.WARNING_MESSAGE);
-        }
-        else if (MesF == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Necesitas ingresar una de las opciones.",
-                    "¡ERROR EN FECHA DEL MES FINAL!",
-                    JOptionPane.WARNING_MESSAGE);
-        }
-        else if (DiaF == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Necesitas ingresar una de las opciones.",
-                    "¡ERROR EN FECHA DEL DÍA FINAL!",
+                    "Necesitas ingresar una fecha.",
+                    "¡ERROR EN FECHA FINAL!",
                     JOptionPane.WARNING_MESSAGE);
         }
         else if (IntensidadFlujoN == 0) {

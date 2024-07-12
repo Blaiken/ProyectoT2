@@ -21,12 +21,10 @@ public class IniciarSesion extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         TextNombre = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        CboxAno = new javax.swing.JComboBox<>();
-        CboxMes = new javax.swing.JComboBox<>();
-        CboxDia = new javax.swing.JComboBox<>();
         BtnAtras = new javax.swing.JButton();
         BtnLimpiar = new javax.swing.JButton();
         BtnIniciar = new javax.swing.JButton();
+        DateFechaNacimiento = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,24 +50,6 @@ public class IniciarSesion extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel3.setText("Fecha nacimiento:");
-
-        CboxAno.setBackground(new java.awt.Color(255, 254, 255));
-        CboxAno.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        CboxAno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Año", "2006", "2007", "2008" }));
-        CboxAno.setOpaque(true);
-
-        CboxMes.setBackground(new java.awt.Color(255, 254, 255));
-        CboxMes.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        CboxMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mes", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Noviembre", "Diciembre" }));
-        CboxMes.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                CboxMesItemStateChanged(evt);
-            }
-        });
-
-        CboxDia.setBackground(new java.awt.Color(255, 254, 255));
-        CboxDia.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        CboxDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Día    " }));
 
         BtnAtras.setBackground(new java.awt.Color(255, 254, 255));
         BtnAtras.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
@@ -104,36 +84,41 @@ public class IniciarSesion extends javax.swing.JFrame {
             }
         });
 
+        DateFechaNacimiento.setBackground(new java.awt.Color(255, 255, 255));
+        DateFechaNacimiento.setDateFormatString("y MMM d");
+        DateFechaNacimiento.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        DateFechaNacimiento.setMaxSelectableDate(new java.util.Date(1230701507000L));
+        DateFechaNacimiento.setMinSelectableDate(new java.util.Date(1136091707000L));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(TextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(BtnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BtnIniciar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BtnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap()
+                        .addComponent(BtnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BtnIniciar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BtnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(55, 55, 55)
+                                        .addComponent(TextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(133, 133, 133)
+                                .addComponent(DateFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 88, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(56, Short.MAX_VALUE)
-                .addComponent(CboxAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(CboxMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(CboxDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,11 +131,8 @@ public class IniciarSesion extends javax.swing.JFrame {
                 .addGap(69, 69, 69)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CboxAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CboxMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CboxDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                .addComponent(DateFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,29 +162,23 @@ public class IniciarSesion extends javax.swing.JFrame {
         val.ReglaN1(TextNombre, evt);
     }//GEN-LAST:event_TextNombreKeyTyped
 
-    private void CboxMesItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CboxMesItemStateChanged
-        ctrl.CboxMesDia(CboxMes, CboxDia, evt);
-    }//GEN-LAST:event_CboxMesItemStateChanged
-
     private void BtnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAtrasActionPerformed
         ctrl.btniniciarsesion_a_menuinicio(BtnAtras, this);
     }//GEN-LAST:event_BtnAtrasActionPerformed
 
     private void BtnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLimpiarActionPerformed
-        ctrl.btnlimpiariniciarsesion(BtnLimpiar, TextNombre, CboxAno, CboxMes, CboxDia);
+        ctrl.btnlimpiariniciarsesion(BtnLimpiar, TextNombre, DateFechaNacimiento);
     }//GEN-LAST:event_BtnLimpiarActionPerformed
 
     private void BtnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIniciarActionPerformed
-        val.BtnValidacionIS(BtnIniciar, TextNombre, CboxAno, CboxMes, CboxDia, this);
+        val.BtnValidacionIS(BtnIniciar, TextNombre, DateFechaNacimiento, this);
     }//GEN-LAST:event_BtnIniciarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAtras;
     private javax.swing.JButton BtnIniciar;
     private javax.swing.JButton BtnLimpiar;
-    public javax.swing.JComboBox<String> CboxAno;
-    public javax.swing.JComboBox<String> CboxDia;
-    public javax.swing.JComboBox<String> CboxMes;
+    private com.toedter.calendar.JDateChooser DateFechaNacimiento;
     public javax.swing.JTextField TextNombre;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

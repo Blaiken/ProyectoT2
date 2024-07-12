@@ -1,5 +1,6 @@
 package controlador;
 
+import com.toedter.calendar.JDateChooser;
 import java.awt.event.ItemEvent;
 import javax.swing.*;
 import vista.*;
@@ -54,127 +55,11 @@ public class controlador {
         dp.setVisible(false);
     }
     
-    public void btnlimpiardatospersonales(JTextField TextNombre, JComboBox CboxAno, JComboBox CboxMes, JComboBox CboxDia,JTextField TextPeso, JTextField TextEstatura){
+    public void btnlimpiardatospersonales(JTextField TextNombre, JDateChooser FechaNacimiento,JTextField TextPeso, JTextField TextEstatura){
         TextNombre.setText("");
-        CboxAno.setSelectedItem("Año");
-        CboxMes.setSelectedItem("Mes");
-        CboxDia.setSelectedItem("Día");
+        FechaNacimiento.setDate(null);
         TextPeso.setText("");
         TextEstatura.setText("");
-    }
-    
-    public void CboxMesDia(JComboBox CboxMes, JComboBox CboxDia, java.awt.event.ItemEvent evt){
-        if(evt.getStateChange()==ItemEvent.SELECTED){
-            if(CboxMes.getSelectedIndex()>=0){
-                CboxDia.setModel(new DefaultComboBoxModel(Dias(CboxMes.getSelectedItem().toString())));
-            }
-        }
-    }
-    
-    private String[]Dias(String datos){
-        String[]informacion = new String[0];
-        if(datos.equalsIgnoreCase("Mes")){
-            informacion = new String[1];
-            informacion[0]="Día    ";
-        }
-        if(datos.equalsIgnoreCase("Enero")){
-            informacion = new String[32];
-            informacion[0]="Día    ";
-            for(int i = 1; i <= 31; i++){
-                String numero = Integer.toString(i);
-                informacion[i]= numero;
-            }
-        }
-        if(datos.equalsIgnoreCase("Febrero")){
-            informacion = new String[29];
-            informacion[0]="Día    ";
-            for(int i = 1; i <= 28; i++){
-                String numero = Integer.toString(i);
-                informacion[i]= numero;
-            }
-        }
-        if(datos.equalsIgnoreCase("Marzo")){
-            informacion = new String[32];
-            informacion[0]="Día    ";
-            for(int i = 1; i <= 31; i++){
-                String numero = Integer.toString(i);
-                informacion[i]= numero;
-            }
-        }
-        if(datos.equalsIgnoreCase("Abril")){
-            informacion = new String[31];
-            informacion[0]="Día    ";
-            for(int i = 1; i <= 30; i++){
-                String numero = Integer.toString(i);
-                informacion[i]= numero;
-            }
-        }
-        if(datos.equalsIgnoreCase("Mayo")){
-            informacion = new String[32];
-            informacion[0]="Día    ";
-            for(int i = 1; i <= 31; i++){
-                String numero = Integer.toString(i);
-                informacion[i]= numero;
-            }
-        }
-        if(datos.equalsIgnoreCase("Junio")){
-            informacion = new String[31];
-            informacion[0]="Día    ";
-            for(int i = 1; i <= 30; i++){
-                String numero = Integer.toString(i);
-                informacion[i]= numero;
-            }
-        }
-        if(datos.equalsIgnoreCase("Julio")){
-            informacion = new String[32];
-            informacion[0]="Día    ";
-            for(int i = 1; i <= 31; i++){
-                String numero = Integer.toString(i);
-                informacion[i]= numero;
-            }
-        }
-        if(datos.equalsIgnoreCase("Agosto")){
-            informacion = new String[32];
-            informacion[0]="Día    ";
-            for(int i = 1; i <= 31; i++){
-                String numero = Integer.toString(i);
-                informacion[i]= numero;
-            }
-        }
-        if(datos.equalsIgnoreCase("Septiembre")){
-            informacion = new String[31];
-            informacion[0]="Día    ";
-            for(int i = 1; i <= 30; i++){
-                String numero = Integer.toString(i);
-                informacion[i]= numero;
-            }
-        }
-        if(datos.equalsIgnoreCase("Octubre")){
-            informacion = new String[32];
-            informacion[0]="Día    ";
-            for(int i = 1; i <= 31; i++){
-                String numero = Integer.toString(i);
-                informacion[i]= numero;
-            }
-        }
-        if(datos.equalsIgnoreCase("Noviembre")){
-            informacion = new String[31];
-            informacion[0]="Día    ";
-            for(int i = 1; i <= 30; i++){
-                String numero = Integer.toString(i);
-                informacion[i]= numero;
-            }
-        }
-        if(datos.equalsIgnoreCase("Diciembre")){
-            informacion = new String[32];
-            informacion[0]="Día    ";
-            for(int i = 1; i <= 31; i++){
-                String numero = Integer.toString(i);
-                informacion[i]= numero;
-            }
-        }
-        
-        return informacion;
     }
     
     // Vista - IniciarSesión
@@ -185,11 +70,9 @@ public class controlador {
         is.setVisible(false);
     }
     
-    public void btnlimpiariniciarsesion(JButton BtnLimpia, JTextField TextNombre, JComboBox CboxAno, JComboBox CboxMes, JComboBox CboxDia){
+    public void btnlimpiariniciarsesion(JButton BtnLimpia, JTextField TextNombre, JDateChooser FechaNacimiento){
         TextNombre.setText("");
-        CboxAno.setSelectedItem("Año");
-        CboxMes.setSelectedItem("Mes");
-        CboxDia.setSelectedItem("Día");
+        FechaNacimiento.setDate(null);
     }
     
     // Vista - Ginecologa
@@ -244,13 +127,9 @@ public class controlador {
         cm.setVisible(false);
     }
     
-    public void btnlimpiarciclomenstrual(JComboBox CboxAnoInicio, JComboBox CboxMesInicio, JComboBox CboxDiaInicio, JComboBox CboxAnoFinal, JComboBox CboxMesFinal, JComboBox CboxDiaFinal, JComboBox CboxIntensidadFlujo){
-        CboxAnoInicio.setSelectedItem("Año");
-        CboxMesInicio.setSelectedItem("Mes");
-        CboxDiaInicio.setSelectedItem("Día");
-        CboxAnoFinal.setSelectedItem("Año");
-        CboxMesFinal.setSelectedItem("Mes");
-        CboxDiaFinal.setSelectedItem("Día");
+    public void btnlimpiarciclomenstrual(JDateChooser FechaInicio, JDateChooser FechaFinal, JComboBox CboxIntensidadFlujo){
+        FechaInicio.setDate(null);
+        FechaFinal.setDate(null);
         CboxIntensidadFlujo.setSelectedItem("Ninguna");
     }
     
