@@ -36,19 +36,19 @@ public class validaciones {
         }
     }
     
-    public void ReglaN3(JTextField TextPeso, java.awt.event.KeyEvent evt){
+    public void ReglaN2(JTextField TextPeso, java.awt.event.KeyEvent evt){
         
-        int rn3 = evt.getKeyChar();
+        int rn2 = evt.getKeyChar();
         
-        boolean numeros = rn3 >= 48 && rn3 <= 57;
-        boolean borrar = rn3 == 8;
-        boolean coma = rn3 == 44;
+        boolean numeros = rn2 >= 48 && rn2 <= 57;
+        boolean borrar = rn2 == 8;
+        boolean coma = rn2 == 44;
         
         if (!(coma || numeros || borrar)){
         evt.consume();
         JOptionPane.showMessageDialog(null,
                 "Solo se permite ingresar una coma o números.",
-                "Error",
+                "ERROR",
                 JOptionPane.WARNING_MESSAGE);
         }
 
@@ -56,11 +56,34 @@ public class validaciones {
         evt.consume();
         JOptionPane.showMessageDialog(null,
                 "El caracter ingresado ya existe.",
-                "Error",
+                "ERROR",
                 JOptionPane.WARNING_MESSAGE);
         }
 
         if (TextPeso.getText().length() == 6){
+            evt.consume();
+            JOptionPane.showMessageDialog(null,
+                    "Has alcanzado el límite de caracteres.",
+                    "ERROR",
+                    JOptionPane.WARNING_MESSAGE);
+        } 
+    }
+    
+    public void ReglaN3(JTextField TextEstatura, java.awt.event.KeyEvent evt){
+        
+        int rn3 = evt.getKeyChar();
+        
+        boolean numeros = rn3 >= 48 && rn3 <= 57;
+        boolean borrar = rn3 == 8;
+        
+        if (!(numeros || borrar)){
+        evt.consume();
+        JOptionPane.showMessageDialog(null,
+                "Solo se permite ingresar una números.",
+                "Error",
+                JOptionPane.WARNING_MESSAGE);
+        }
+        if (TextEstatura.getText().length() == 6){
             evt.consume();
             JOptionPane.showMessageDialog(null,
                     "Has alcanzado el límite de caracteres.",
@@ -71,15 +94,15 @@ public class validaciones {
     
     public void BtnValidacionDP(JButton BtnSiguiente, JTextField TextNombre,JDateChooser DateFechaNacimiento, JTextField TextPeso, JTextField TextEstatura, DatosPersonales dp){
 
-        if(TextNombre.getText().length() >= 3 && DateFechaNacimiento.getDate() != null && TextPeso.getText().length() >= 4 && TextEstatura.getText().length() >= 4){
+        if(TextNombre.getText().length() >= 2 && DateFechaNacimiento.getDate() != null && TextPeso.getText().length() >= 4 && TextEstatura.getText().length() >= 3){
             MenuUsuaria mu = new MenuUsuaria();
             mu.setLocationRelativeTo(null);
             mu.setVisible(true);
             dp.setVisible(false);
         } 
-        else if (TextNombre.getText().length() < 3) {
+        else if (TextNombre.getText().length() < 2) {
             JOptionPane.showMessageDialog(null,
-                    "Necesita un minímo de 3 letras para continuar.",
+                    "Necesita un minímo de 2 letras para continuar.",
                     "¡ERROR EN NOMBRE!",
                     JOptionPane.WARNING_MESSAGE);
         }
@@ -91,20 +114,19 @@ public class validaciones {
         } 
         else if (TextPeso.getText().length() < 4) {
             JOptionPane.showMessageDialog(null,
-                    "Necesitas ingresar al menos 5 números.",
+                    "Necesitas ingresar al menos 4 números.",
                     "¡ERROR EN PESO!",
                     JOptionPane.WARNING_MESSAGE);
-        } 
-        else if (TextEstatura.getText().length() < 4) {
+        }
+        else if (TextEstatura.getText().length() < 3) {
             JOptionPane.showMessageDialog(null,
-                    "Necesitas ingresar al menos 5 números.",
+                    "Necesitas ingresar al menos 3 números.",
                     "¡ERROR EN ESTATURA!",
                     JOptionPane.WARNING_MESSAGE);
         }
     }
     
     // Vista - IniciarSesion
-    
     public void BtnValidacionIS(JButton BtnIniciarSesion, JTextField TextNombre, JDateChooser DateFechaNacimiento, IniciarSesion is){
         
         if(TextNombre.getText().length() >= 3 && DateFechaNacimiento.getDate() != null){

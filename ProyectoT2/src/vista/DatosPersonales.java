@@ -223,7 +223,7 @@ public class DatosPersonales extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnLimpiarActionPerformed
 
     private void TextPesoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextPesoKeyTyped
-        val.ReglaN3(TextPeso, evt);
+        val.ReglaN2(TextPeso, evt);
     }//GEN-LAST:event_TextPesoKeyTyped
 
     private void TextEstaturaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextEstaturaKeyTyped
