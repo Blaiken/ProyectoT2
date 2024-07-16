@@ -59,6 +59,14 @@ public class validaciones {
                 "ERROR",
                 JOptionPane.WARNING_MESSAGE);
         }
+        
+        if (coma && TextPeso.getText().isEmpty()) {
+        evt.consume();
+        }
+        
+        if (coma && (TextPeso.getText().length() > 3 || TextPeso.getText().length() < 2)) {
+        evt.consume();
+        }
 
         if (TextPeso.getText().length() == 6){
             evt.consume();
@@ -66,7 +74,7 @@ public class validaciones {
                     "Has alcanzado el límite de caracteres.",
                     "ERROR",
                     JOptionPane.WARNING_MESSAGE);
-        } 
+        }
     }
     
     public void ReglaN3(JTextField TextEstatura, java.awt.event.KeyEvent evt){
@@ -80,64 +88,80 @@ public class validaciones {
         evt.consume();
         JOptionPane.showMessageDialog(null,
                 "Solo se permite ingresar una números.",
-                "Error",
+                "ERROR",
                 JOptionPane.WARNING_MESSAGE);
         }
-        if (TextEstatura.getText().length() == 6){
+        if (TextEstatura.getText().length() == 3){
             evt.consume();
             JOptionPane.showMessageDialog(null,
                     "Has alcanzado el límite de caracteres.",
-                    "Error",
+                    "ERROR",
                     JOptionPane.WARNING_MESSAGE);
         } 
     }
     
-    public void BtnValidacionDP(JButton BtnSiguiente, JTextField TextNombre,JDateChooser DateFechaNacimiento, JTextField TextPeso, JTextField TextEstatura, DatosPersonales dp){
+    // Vista - DatosPersonales
+    public void BtnValidacionDP(JButton BtnSiguiente, JTextField TextNombre, JDateChooser DateFechaNacimiento, JTextField TextPeso, JTextField TextEstatura, DatosPersonales dp){
 
-        if(TextNombre.getText().length() >= 2 && DateFechaNacimiento.getDate() != null && TextPeso.getText().length() >= 4 && TextEstatura.getText().length() >= 3){
+        if(TextNombre.getText().length() >= 2 && DateFechaNacimiento.getDate() != null && TextPeso.getText().length() >= 4 && TextPeso.getText().contains(",") && EstaturaVal(TextEstatura.getText())){
             MenuUsuaria mu = new MenuUsuaria();
             mu.setLocationRelativeTo(null);
             mu.setVisible(true);
             dp.setVisible(false);
-        } 
-        else if (TextNombre.getText().length() < 2) {
+        }
+        else if (TextNombre.getText().length() < 2){
             JOptionPane.showMessageDialog(null,
-                    "Necesita un minímo de 2 letras para continuar.",
+                    "Necesita un mínimo de 2 letras para continuar.",
                     "¡ERROR EN NOMBRE!",
                     JOptionPane.WARNING_MESSAGE);
         }
-        else if (DateFechaNacimiento.getDate() == null) {
+        else if (DateFechaNacimiento.getDate() == null){
             JOptionPane.showMessageDialog(null,
                     "Necesitas ingresar una fecha.",
                     "¡ERROR EN FECHA DE NACIMIENTO!",
                     JOptionPane.WARNING_MESSAGE);
-        } 
-        else if (TextPeso.getText().length() < 4) {
+        }
+        else if (TextPeso.getText().length() < 4){
             JOptionPane.showMessageDialog(null,
                     "Necesitas ingresar al menos 4 números.",
                     "¡ERROR EN PESO!",
                     JOptionPane.WARNING_MESSAGE);
         }
-        else if (TextEstatura.getText().length() < 3) {
+        else if (!TextPeso.getText().contains(",")){
             JOptionPane.showMessageDialog(null,
-                    "Necesitas ingresar al menos 3 números.",
+                    "Necesitas ingresar la coma correspondiente.",
+                    "¡ERROR EN PESO!",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+        else if (!EstaturaVal(TextEstatura.getText())){
+            JOptionPane.showMessageDialog(null,
+                    "La estatura debe estar entre 100 y 200 cm.",
                     "¡ERROR EN ESTATURA!",
                     JOptionPane.WARNING_MESSAGE);
         }
     }
-    
+
+    private boolean EstaturaVal(String EstaturaText) {
+        try {
+            double estatura = Double.parseDouble(EstaturaText);
+            return estatura > 100 && estatura <= 200;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+ 
     // Vista - IniciarSesion
     public void BtnValidacionIS(JButton BtnIniciarSesion, JTextField TextNombre, JDateChooser DateFechaNacimiento, IniciarSesion is){
         
-        if(TextNombre.getText().length() >= 3 && DateFechaNacimiento.getDate() != null){
+        if(TextNombre.getText().length() >= 2 && DateFechaNacimiento.getDate() != null){
             MenuUsuaria mu = new MenuUsuaria();
             mu.setLocationRelativeTo(null);
             mu.setVisible(true);
             is.setVisible(false);
         }
-        else if (TextNombre.getText().length() < 3) {
+        else if (TextNombre.getText().length() < 2) {
             JOptionPane.showMessageDialog(null,
-                    "Necesita un minímo de 3 letras para continuar.",
+                    "Necesita un minímo de 2 letras para continuar.",
                     "¡ERROR EN NOMBRE!",
                     JOptionPane.WARNING_MESSAGE);
         } 
@@ -150,7 +174,6 @@ public class validaciones {
     }
     
     // Vista - CicloMenstrual
-    
     public void BtnGuardarCicloMenstrual(JButton BtnGuardar, JDateChooser FechaInicio, JDateChooser FechaFinal, JComboBox IntensidadFlujo, CicloMenstrual cm){
         
         Date FI = FechaInicio.getDate();
@@ -273,5 +296,5 @@ public class validaciones {
                     "¡ERROR EN ESTATURA!",
                     JOptionPane.WARNING_MESSAGE);
             }
-    }
+        }
 }
