@@ -1,11 +1,42 @@
 package controlador;
 
 import com.toedter.calendar.JDateChooser;
-import java.awt.event.ItemEvent;
 import javax.swing.*;
 import vista.*;
 
 public class controlador {
+    
+    // Vista - LoginP
+    public void lbleditardatosacceso(JLabel LabelEditarDatos, LoginP lp){
+        EditarDatosAcceso eda = new EditarDatosAcceso();
+        eda.setLocationRelativeTo(null);
+        eda.setVisible(true);
+        lp.setVisible(false);
+    }
+    
+    public void btnlimpiarloginp(JTextField TextUsuaria, JPasswordField TextContrasena){
+        TextUsuaria.setText("");
+        TextContrasena.setText("");
+    }
+    
+    public void btnsalir(){
+        System.exit(0);
+    }
+    
+    // Vista - EditarDatosAcceso
+    public void btneditardatosacceso_a_loginp(JButton BtnVolver, EditarDatosAcceso eda){
+        LoginP lp = new LoginP();
+        lp.setLocationRelativeTo(null);
+        lp.setVisible(true);
+        eda.setVisible(false);
+    }
+    
+    public void btnlimpiareditardatosacceso(JTextField TextUsuariaAnterior, JPasswordField TextContraAnterior, JTextField TextUsuariaNuevo, JPasswordField TextContraNuevo){
+        TextUsuariaAnterior.setText("");
+        TextContraAnterior.setText("");
+        TextUsuariaNuevo.setText("");
+        TextContraNuevo.setText("");
+    }
     
     // Vista - MenuInicio
     public void btncrearcuenta(JButton BtnCrearCuenta, MenuInicio MI){
@@ -36,8 +67,11 @@ public class controlador {
         MI.setVisible(false);
     }
     
-    public void salir(){
-        System.exit(0);
+    public void btnmenuinicio_a_loginp(JButton BtnCerrar, MenuInicio MI){
+        LoginP lp = new LoginP();
+        lp.setLocationRelativeTo(null);
+        lp.setVisible(true);
+        MI.setVisible(false);
     }
     
     // Vista - DatosPersonales

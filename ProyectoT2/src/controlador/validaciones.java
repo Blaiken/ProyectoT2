@@ -7,8 +7,6 @@ import vista.*;
 
 public class validaciones {
     
-    // Vista - DatosPersonales
-    
     public void ReglaN1(JTextField TextNombre, java.awt.event.KeyEvent evt) {
         
         int rn1 = evt.getKeyChar();
@@ -72,8 +70,8 @@ public class validaciones {
             evt.consume();
             JOptionPane.showMessageDialog(null,
                     "Has alcanzado el límite de caracteres.",
-                    "ERROR",
-                    JOptionPane.WARNING_MESSAGE);
+                    "AVISO",
+                    JOptionPane.INFORMATION_MESSAGE);
         }
     }
     
@@ -87,7 +85,7 @@ public class validaciones {
         if (!(numeros || borrar)){
         evt.consume();
         JOptionPane.showMessageDialog(null,
-                "Solo se permite ingresar una números.",
+                "Solo se permite ingresar números.",
                 "ERROR",
                 JOptionPane.WARNING_MESSAGE);
         }
@@ -95,15 +93,137 @@ public class validaciones {
             evt.consume();
             JOptionPane.showMessageDialog(null,
                     "Has alcanzado el límite de caracteres.",
-                    "ERROR",
-                    JOptionPane.WARNING_MESSAGE);
+                    "AVISO",
+                    JOptionPane.INFORMATION_MESSAGE);
         } 
     }
     
+    public void ReglaN5(JPasswordField TextContrasena, java.awt.event.KeyEvent evt){
+        
+        int rn5 = evt.getKeyChar();
+        
+        boolean mayusculas = rn5 >= 65 && rn5 <= 90;
+        boolean minusculas = rn5 >= 97 && rn5 <= 122;
+        boolean numeros = rn5 >= 48 && rn5 <= 57;
+        boolean coma = rn5 == 44;
+        boolean borrar = rn5 == 8;
+        
+        if (!(mayusculas || minusculas || numeros ||coma || borrar)){
+        evt.consume();
+        JOptionPane.showMessageDialog(null,
+                "No se pueden ingresar caracteres especiales.",
+                "ERROR",
+                JOptionPane.WARNING_MESSAGE);
+        }
+        
+        if (TextContrasena.getText().length() >= 12){
+            evt.consume();
+            JOptionPane.showMessageDialog(null,
+                    "Has alcanzado el límite de caracteres.",
+                    "AVISO",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+    
+    public void ReglaN6(JTextField TextCedula, java.awt.event.KeyEvent evt){
+        
+        int rn6 = evt.getKeyChar();
+        
+        boolean numeros = rn6 >= 48 && rn6 <= 57;
+        boolean borrar = rn6 == 8;
+        
+        if (!(numeros || borrar)){
+        evt.consume();
+        JOptionPane.showMessageDialog(null,
+                "Solo se permite ingresar números.",
+                "ERROR",
+                JOptionPane.WARNING_MESSAGE);
+        }
+        if (TextCedula.getText().length() == 8){
+            evt.consume();
+            JOptionPane.showMessageDialog(null,
+                    "Has alcanzado el límite de caracteres.",
+                    "AVISO",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+    
+    // Vista - LoginP
+    
+    public void VerContraseña(JPasswordField TextContrasena, JCheckBox CheckVerContra){
+         
+         if(CheckVerContra.isSelected()){
+             TextContrasena.setEchoChar((char)0);
+         } else{
+             TextContrasena.setEchoChar('•');
+         }
+     }
+    
+    public void BtnValidacionLoginP(JButton BtnEntrar, JTextField TextUsuaria, JPasswordField TextContra, LoginP lp){
+        
+        if(TextUsuaria.getText().length() >= 2 && TextContra.getText().length() >= 8){
+            MenuInicio mi = new MenuInicio();
+            mi.setLocationRelativeTo(null);
+            mi.setVisible(true);
+            lp.setVisible(false);
+        }
+        else if(TextUsuaria.getText().length() < 2){
+            JOptionPane.showMessageDialog(null,
+                    "Necesita un mínimo de 2 letras para continuar.",
+                    "¡ERROR EN USUARIA!",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+        else if(TextContra.getText().length() < 8){
+            JOptionPane.showMessageDialog(null,
+                    "Necesita un mínimo de 7 letras para continuar.",
+                    "¡ERROR EN CONTRASEÑA!",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+    }
+    
+    // Vista - EditarDatosAcceso
+    public void BtnValidacionEDA(JButton BtnEDA, JTextField TextUsuariaAnterior, JPasswordField TextContraAnterior, JTextField TextUsuariaNuevo, JPasswordField TextContraNuevo){
+        
+        if(TextUsuariaAnterior.getText().length() >= 2 && TextContraAnterior.getText().length() >= 8 && TextUsuariaNuevo.getText().length() >= 2 && TextContraNuevo.getText().length() >= 8){
+            JOptionPane.showMessageDialog(null,
+                    "Guardado con éxito.",
+                    "¡LISTO!",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+        else if (TextUsuariaAnterior.getText().length() < 2){
+            JOptionPane.showMessageDialog(null,
+                    "Necesita un mínimo de 2 letras para continuar.",
+                    "¡ERROR EN USUARIA -ANTERIOR-!",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+        else if (TextUsuariaNuevo.getText().length() < 2){
+            JOptionPane.showMessageDialog(null,
+                    "Necesita un mínimo de 2 letras para continuar.",
+                    "¡ERROR EN USUARIA -NUEVO-!",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+        else if(TextContraAnterior.getText().length() < 8){
+            JOptionPane.showMessageDialog(null,
+                    "Necesita un mínimo de 7 letras para continuar.",
+                    "¡ERROR EN CONTRASEÑA!",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+        else if(TextContraNuevo.getText().length() < 8){
+            JOptionPane.showMessageDialog(null,
+                    "Necesita un mínimo de 7 letras para continuar.",
+                    "¡ERROR EN CONTRASEÑA!",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+    }
+    
     // Vista - DatosPersonales
-    public void BtnValidacionDP(JButton BtnSiguiente, JTextField TextNombre, JDateChooser DateFechaNacimiento, JTextField TextPeso, JTextField TextEstatura, DatosPersonales dp){
+    public void BtnValidacionDP(JButton BtnSiguiente, JTextField TextNombre, JTextField TextCedula, JDateChooser DateFechaNacimiento, JTextField TextPeso, JTextField TextEstatura, DatosPersonales dp){
 
-        if(TextNombre.getText().length() >= 2 && DateFechaNacimiento.getDate() != null && TextPeso.getText().length() >= 4 && TextPeso.getText().contains(",") && EstaturaVal(TextEstatura.getText())){
+        if(TextNombre.getText().length() >= 2 && TextCedula.getText().length() == 8 && DateFechaNacimiento.getDate() != null && TextPeso.getText().length() >= 4 && TextPeso.getText().contains(",") && EstaturaVal(TextEstatura.getText())){
+            JOptionPane.showMessageDialog(null,
+                    "Se ha registrado correctamente.",
+                    "¡TODO LISTO!",
+                    JOptionPane.INFORMATION_MESSAGE);
             MenuUsuaria mu = new MenuUsuaria();
             mu.setLocationRelativeTo(null);
             mu.setVisible(true);
@@ -113,6 +233,12 @@ public class validaciones {
             JOptionPane.showMessageDialog(null,
                     "Necesita un mínimo de 2 letras para continuar.",
                     "¡ERROR EN NOMBRE!",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+        else if (TextCedula.getText().length() < 7){
+            JOptionPane.showMessageDialog(null,
+                    "Necesitas ingresar una fecha.",
+                    "¡ERROR EN CÉDULA!",
                     JOptionPane.WARNING_MESSAGE);
         }
         else if (DateFechaNacimiento.getDate() == null){

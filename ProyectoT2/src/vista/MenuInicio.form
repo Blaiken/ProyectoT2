@@ -57,11 +57,11 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="95" pref="95" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="BtnGinecologa1" min="-2" pref="200" max="-2" attributes="0"/>
+                      <Component id="BtnHistorial" min="-2" pref="200" max="-2" attributes="0"/>
                       <Component id="BtnIniciarSesion" min="-2" pref="200" max="-2" attributes="0"/>
                       <Component id="BtnCrearCuenta" min="-2" pref="200" max="-2" attributes="0"/>
                       <Component id="BtnGinecologa" min="-2" pref="200" max="-2" attributes="0"/>
-                      <Component id="BtnSalir" min="-2" pref="200" max="-2" attributes="0"/>
+                      <Component id="BtnCerrar" min="-2" pref="200" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -79,9 +79,9 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="BtnGinecologa" min="-2" pref="60" max="-2" attributes="0"/>
                   <EmptySpace pref="7" max="32767" attributes="0"/>
-                  <Component id="BtnGinecologa1" min="-2" pref="60" max="-2" attributes="0"/>
+                  <Component id="BtnHistorial" min="-2" pref="60" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="BtnSalir" min="-2" pref="60" max="-2" attributes="0"/>
+                  <Component id="BtnCerrar" min="-2" pref="60" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -131,7 +131,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Crear cuenta"/>
+            <Property name="text" type="java.lang.String" value="Registrar estudiante"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
             </Property>
@@ -140,7 +140,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnCrearCuentaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="BtnSalir">
+        <Component class="javax.swing.JButton" name="BtnCerrar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="fe" red="ff" type="rgb"/>
@@ -148,13 +148,13 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Salir"/>
+            <Property name="text" type="java.lang.String" value="Cerrar"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnSalirActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnCerrarActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -179,7 +179,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Iniciar sesi&#xf3;n"/>
+            <Property name="text" type="java.lang.String" value="Gestionar perfil"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
             </Property>
@@ -188,7 +188,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnIniciarSesionActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="BtnGinecologa1">
+        <Component class="javax.swing.JButton" name="BtnHistorial">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="fe" red="ff" type="rgb"/>
@@ -202,7 +202,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnGinecologa1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnHistorialActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

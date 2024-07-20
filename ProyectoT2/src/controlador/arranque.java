@@ -1,10 +1,10 @@
 package controlador;
 
-import vista.MenuInicio;
+import vista.LoginP;
 
 public class arranque {
         public static void main(String[] args) {
-        MenuInicio inicio = new MenuInicio();
+        LoginP inicio = new LoginP();
         inicio.setLocationRelativeTo(null);
         inicio.setVisible(true);
     

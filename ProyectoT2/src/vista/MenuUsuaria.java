@@ -143,7 +143,7 @@ public class MenuUsuaria extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnEditarPerfil1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEditarPerfil1ActionPerformed
-        ctrl.salir();
+        ctrl.btnsalir();
     }//GEN-LAST:event_BtnEditarPerfil1ActionPerformed
 
     private void BtnCicloMenstrualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCicloMenstrualActionPerformed
