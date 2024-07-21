@@ -39,8 +39,8 @@
           <Color blue="cc" green="cc" red="ff" type="rgb"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
-            <MatteColorBorder bottom="2" left="2" right="2" top="2"/>
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder thickness="2"/>
           </Border>
         </Property>
       </Properties>
@@ -103,7 +103,7 @@
             <Property name="text" type="java.lang.String" value="MEN&#xda; DE USUARIA"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
-                <MatteColorBorder bottom="2" left="1" right="1" top="1">
+                <MatteColorBorder bottom="2" left="0" right="0" top="0">
                   <Color PropertyName="color" blue="2" green="2" red="2" type="rgb"/>
                 </MatteColorBorder>
               </Border>
