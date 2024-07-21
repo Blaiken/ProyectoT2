@@ -91,7 +91,7 @@ public class CicloMenstrual extends javax.swing.JFrame {
         FechaInicio.setDateFormatString("y MMM d");
         FechaInicio.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         FechaInicio.setMaxSelectableDate(new java.util.Date(1924923707000L));
-        FechaInicio.setMinSelectableDate(new java.util.Date(1704085307000L));
+        FechaInicio.setMinSelectableDate(new java.util.Date(1717218107000L));
 
         FechaFinal.setBackground(new java.awt.Color(255, 255, 255));
         FechaFinal.setDateFormatString("y MMM d");

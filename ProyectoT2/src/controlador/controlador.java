@@ -47,7 +47,7 @@ public class controlador {
     }
     
     public void btniniciarsesion(JButton BtnIniciarSesion, MenuInicio MI){
-        IniciarSesion is = new IniciarSesion();
+        GestionarPerfil is = new GestionarPerfil();
         is.setLocationRelativeTo(null);
         is.setVisible(true);
         MI.setVisible(false);
@@ -64,6 +64,13 @@ public class controlador {
         HistorialCiclo hc = new HistorialCiclo();
         hc.setLocationRelativeTo(null);
         hc.setVisible(true);
+        MI.setVisible(false);
+    }
+    
+    public void btnprivacidad_a_confidencialidad(JButton BtnConfidencialidad, MenuInicio MI){
+        Confidencialidad con = new Confidencialidad();
+        con.setLocationRelativeTo(null);
+        con.setVisible(true);
         MI.setVisible(false);
     }
     
@@ -96,16 +103,17 @@ public class controlador {
         TextEstatura.setText("");
     }
     
-    // Vista - IniciarSesión
-    public void btniniciarsesion_a_menuinicio(JButton BtnAtras, IniciarSesion is){
+    // Vista - GestionarPerfil
+    public void btngestionarperfil_a_menuinicio(JButton BtnAtras, GestionarPerfil gp){
         MenuInicio mi = new MenuInicio();
         mi.setLocationRelativeTo(null);
         mi.setVisible(true);
-        is.setVisible(false);
+        gp.setVisible(false);
     }
     
-    public void btnlimpiariniciarsesion(JButton BtnLimpia, JTextField TextNombre, JDateChooser FechaNacimiento){
+    public void btnlimpiargestionaperfil(JButton BtnLimpia, JTextField TextNombre, JTextField TextCedula, JDateChooser FechaNacimiento){
         TextNombre.setText("");
+        TextCedula.setText("");
         FechaNacimiento.setDate(null);
     }
     
@@ -216,18 +224,11 @@ public class controlador {
         ep.setVisible(false);
     }
     
-    public void btnprivacidad_a_confidencialidad(JButton BtnConfidencialidad, EditarPerfil ep){
-        Confidencialidad con = new Confidencialidad();
-        con.setLocationRelativeTo(null);
-        con.setVisible(true);
-        ep.setVisible(false);
-    }
-    
     // Vista - Confidencialidad
     public void btnconfidencialidad_a_editarperfil(JButton BtnVolver, Confidencialidad con){
-        MenuUsuaria mu = new MenuUsuaria();
-        mu.setLocationRelativeTo(null);
-        mu.setVisible(true);
+        MenuInicio mi = new MenuInicio();
+        mi.setLocationRelativeTo(null);
+        mi.setVisible(true);
         con.setVisible(false);
     }
 }

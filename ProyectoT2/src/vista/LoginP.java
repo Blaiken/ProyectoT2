@@ -45,14 +45,13 @@ public class LoginP extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Usuaria:");
-        jLabel2.setToolTipText("");
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Contraseña:");
-        jLabel3.setToolTipText("");
 
         TextUsuaria.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        TextUsuaria.setToolTipText("Solo puede contener letras.");
         TextUsuaria.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 TextUsuariaKeyTyped(evt);
@@ -77,6 +76,7 @@ public class LoginP extends javax.swing.JFrame {
         BtnSalir.setBackground(new java.awt.Color(255, 254, 255));
         BtnSalir.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         BtnSalir.setText("Salir");
+        BtnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnSalirActionPerformed(evt);
@@ -86,6 +86,7 @@ public class LoginP extends javax.swing.JFrame {
         BtnLimpiar.setBackground(new java.awt.Color(255, 254, 255));
         BtnLimpiar.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         BtnLimpiar.setText("Limpiar");
+        BtnLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnLimpiarActionPerformed(evt);
@@ -93,6 +94,7 @@ public class LoginP extends javax.swing.JFrame {
         });
 
         TextContraseña.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        TextContraseña.setToolTipText("Puede contener: Letras, números y carácteres especiales.");
         TextContraseña.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 TextContraseñaKeyTyped(evt);

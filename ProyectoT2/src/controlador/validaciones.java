@@ -106,12 +106,13 @@ public class validaciones {
         boolean minusculas = rn5 >= 97 && rn5 <= 122;
         boolean numeros = rn5 >= 48 && rn5 <= 57;
         boolean coma = rn5 == 44;
+        boolean punto = rn5 == 46;
         boolean borrar = rn5 == 8;
         
-        if (!(mayusculas || minusculas || numeros ||coma || borrar)){
+        if (!(mayusculas || minusculas || numeros || coma || punto || borrar)){
         evt.consume();
         JOptionPane.showMessageDialog(null,
-                "No se pueden ingresar caracteres especiales.",
+                "Solo se pueden ingresar '.' y ',' como carácteres especiales.",
                 "ERROR",
                 JOptionPane.WARNING_MESSAGE);
         }
@@ -219,7 +220,7 @@ public class validaciones {
     // Vista - DatosPersonales
     public void BtnValidacionDP(JButton BtnSiguiente, JTextField TextNombre, JTextField TextCedula, JDateChooser DateFechaNacimiento, JTextField TextPeso, JTextField TextEstatura, DatosPersonales dp){
 
-        if(TextNombre.getText().length() >= 2 && TextCedula.getText().length() == 8 && DateFechaNacimiento.getDate() != null && TextPeso.getText().length() >= 4 && TextPeso.getText().contains(",") && EstaturaVal(TextEstatura.getText())){
+        if(TextNombre.getText().length() >= 2 && CedulaVal(TextCedula.getText()) && DateFechaNacimiento.getDate() != null && TextPeso.getText().length() >= 4 && TextPeso.getText().contains(",") && EstaturaVal(TextEstatura.getText())){
             JOptionPane.showMessageDialog(null,
                     "Se ha registrado correctamente.",
                     "¡TODO LISTO!",
@@ -235,9 +236,9 @@ public class validaciones {
                     "¡ERROR EN NOMBRE!",
                     JOptionPane.WARNING_MESSAGE);
         }
-        else if (TextCedula.getText().length() < 7){
+        else if (!CedulaVal(TextCedula.getText())){
             JOptionPane.showMessageDialog(null,
-                    "Necesitas ingresar una fecha.",
+                    "Necesitas ingresar la cédula de identidad correcta.",
                     "¡ERROR EN CÉDULA!",
                     JOptionPane.WARNING_MESSAGE);
         }
@@ -266,6 +267,15 @@ public class validaciones {
                     JOptionPane.WARNING_MESSAGE);
         }
     }
+    
+    private boolean CedulaVal(String CedulaText) {
+        try {
+            double cedula = Double.parseDouble(CedulaText);
+            return cedula > 2000000 && cedula <= 50000000;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 
     private boolean EstaturaVal(String EstaturaText) {
         try {
@@ -276,19 +286,25 @@ public class validaciones {
         }
     }
  
-    // Vista - IniciarSesion
-    public void BtnValidacionIS(JButton BtnIniciarSesion, JTextField TextNombre, JDateChooser DateFechaNacimiento, IniciarSesion is){
+    // Vista - GestionarPerfil
+    public void BtnValidacionGP(JButton BtnIniciarSesion, JTextField TextNombre, JTextField TextCedula, JDateChooser DateFechaNacimiento, GestionarPerfil gp){
         
-        if(TextNombre.getText().length() >= 2 && DateFechaNacimiento.getDate() != null){
+        if(TextNombre.getText().length() >= 2 && CedulaVal(TextCedula.getText()) && DateFechaNacimiento.getDate() != null){
             MenuUsuaria mu = new MenuUsuaria();
             mu.setLocationRelativeTo(null);
             mu.setVisible(true);
-            is.setVisible(false);
+            gp.setVisible(false);
         }
         else if (TextNombre.getText().length() < 2) {
             JOptionPane.showMessageDialog(null,
                     "Necesita un minímo de 2 letras para continuar.",
                     "¡ERROR EN NOMBRE!",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+        else if (!CedulaVal(TextCedula.getText())) {
+            JOptionPane.showMessageDialog(null,
+                    "Necesitas ingresar la cédula de identidad correcta.",
+                    "¡ERROR EN CÉDULA!",
                     JOptionPane.WARNING_MESSAGE);
         } 
         else if (DateFechaNacimiento.getDate() == null) {
