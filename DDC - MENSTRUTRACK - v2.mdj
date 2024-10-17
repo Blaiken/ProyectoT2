@@ -414,7 +414,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 560,
+											"left": 544,
 											"top": 160,
 											"height": 13
 										},
@@ -425,9 +425,9 @@
 												"$ref": "AAAAAAGQVkyY38bs1To="
 											},
 											"font": "Arial;13;1",
-											"left": 405,
+											"left": 397,
 											"top": 311,
-											"width": 226.087890625,
+											"width": 233.69873046875,
 											"height": 13,
 											"text": "CicloMenstrual"
 										},
@@ -439,7 +439,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 560,
+											"left": 544,
 											"top": 160,
 											"width": 156.04443359375,
 											"height": 13,
@@ -453,16 +453,16 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 560,
+											"left": 544,
 											"top": 160,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 400,
+									"left": 392,
 									"top": 304,
-									"width": 236.087890625,
+									"width": 243.69873046875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGQVkyY38bt5l4="
@@ -497,11 +497,11 @@
 												"$ref": "AAAAAAGQVk4XxccUBHY="
 											},
 											"font": "Arial;13;0",
-											"left": 405,
+											"left": 397,
 											"top": 334,
-											"width": 226.087890625,
+											"width": 233.69873046875,
 											"height": 13,
-											"text": "-fecha_inicio: date",
+											"text": "-fecha_inicio_ultima_menstruacion: date",
 											"horizontalAlignment": 0
 										},
 										{
@@ -514,11 +514,11 @@
 												"$ref": "AAAAAAGQVk5d7cccwIs="
 											},
 											"font": "Arial;13;0",
-											"left": 405,
+											"left": 397,
 											"top": 349,
-											"width": 226.087890625,
+											"width": 233.69873046875,
 											"height": 13,
-											"text": "-fecha_fin: date",
+											"text": "-fecha_inicio_menstruacion_actual: date",
 											"horizontalAlignment": 0
 										},
 										{
@@ -531,9 +531,9 @@
 												"$ref": "AAAAAAGQVk6db8clOMM="
 											},
 											"font": "Arial;13;0",
-											"left": 405,
+											"left": 397,
 											"top": 364,
-											"width": 226.087890625,
+											"width": 233.69873046875,
 											"height": 13,
 											"text": "-intensidad_flujo: string",
 											"horizontalAlignment": 0
@@ -549,7 +549,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 389,
+											"left": 373,
 											"top": 411,
 											"width": 195.7333984375,
 											"height": 13,
@@ -558,9 +558,9 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 400,
+									"left": 392,
 									"top": 329,
-									"width": 236.087890625,
+									"width": 243.69873046875,
 									"height": 53
 								},
 								{
@@ -583,9 +583,9 @@
 												"$ref": "AAAAAAGQVlBH28dIisI="
 											},
 											"font": "Arial;13;0",
-											"left": 405,
+											"left": 397,
 											"top": 387,
-											"width": 226.087890625,
+											"width": 233.69873046875,
 											"height": 13,
 											"text": "+m_duracion(): int",
 											"horizontalAlignment": 0
@@ -600,9 +600,9 @@
 												"$ref": "AAAAAAGQVlCfWMdRZv8="
 											},
 											"font": "Arial;13;0",
-											"left": 405,
+											"left": 397,
 											"top": 402,
-											"width": 226.087890625,
+											"width": 233.69873046875,
 											"height": 13,
 											"text": "+m_dias_fertiles_seguridad(): date",
 											"horizontalAlignment": 0
@@ -617,11 +617,11 @@
 												"$ref": "AAAAAAGQVlDKTsdae0U="
 											},
 											"font": "Arial;13;0",
-											"left": 405,
+											"left": 397,
 											"top": 417,
-											"width": 226.087890625,
+											"width": 233.69873046875,
 											"height": 13,
-											"text": "+m_ciclo_promedio(): date",
+											"text": "+m_proximo_ciclo(): date",
 											"horizontalAlignment": 0
 										},
 										{
@@ -634,18 +634,18 @@
 												"$ref": "AAAAAAGSX33V/dp47eU="
 											},
 											"font": "Arial;13;0",
-											"left": 405,
+											"left": 397,
 											"top": 432,
-											"width": 226.087890625,
+											"width": 233.69873046875,
 											"height": 13,
-											"text": "+m_prediccion_ovulacion(): string",
+											"text": "+m_prediccion_ovulacion(): int",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 400,
+									"left": 392,
 									"top": 382,
-									"width": 236.087890625,
+									"width": 243.69873046875,
 									"height": 68
 								},
 								{
@@ -659,7 +659,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 96,
+									"left": 88,
 									"top": 48,
 									"width": 10,
 									"height": 10
@@ -675,7 +675,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 96,
+									"left": 88,
 									"top": 48,
 									"width": 10,
 									"height": 10
@@ -683,9 +683,9 @@
 							],
 							"font": "Arial;13;0",
 							"containerChangeable": true,
-							"left": 400,
+							"left": 392,
 							"top": 304,
-							"width": 235.087890625,
+							"width": 242.69873046875,
 							"height": 146,
 							"nameCompartment": {
 								"$ref": "AAAAAAGQVkyY38bs1To="
@@ -1833,8 +1833,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 484,
-									"top": 269,
+									"left": 483,
+									"top": 268,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -1853,8 +1853,8 @@
 										"$ref": "AAAAAAGQVnbVAPYsxS8="
 									},
 									"font": "Arial;13;0",
-									"left": 515,
-									"top": 287,
+									"left": 514,
+									"top": 288,
 									"width": 7.22998046875,
 									"height": 13,
 									"alpha": 5.763099800659104,
@@ -1967,7 +1967,7 @@
 								"$ref": "AAAAAAGQVkyY3sbrdjY="
 							},
 							"lineStyle": 1,
-							"points": "514:303;512:256;513:231",
+							"points": "512:303;512:256;513:231",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGQVnbVA/YweZs="
@@ -2578,7 +2578,7 @@
 										"$ref": "AAAAAAGQVoetd1JJNlk="
 									},
 									"font": "Arial;13;0",
-									"left": 487,
+									"left": 485,
 									"top": 478,
 									"width": 55.9990234375,
 									"height": 13,
@@ -2601,8 +2601,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 548,
-									"top": 478,
+									"left": 546,
+									"top": 477,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -2622,7 +2622,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 504,
+									"left": 502,
 									"top": 479,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -2643,7 +2643,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 534,
+									"left": 532,
 									"top": 470,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -2664,7 +2664,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 547,
+									"left": 545,
 									"top": 472,
 									"height": 13,
 									"alpha": 0.7853981633974483,
@@ -2684,7 +2684,7 @@
 										"$ref": "AAAAAAGQVoetd1JKmaA="
 									},
 									"font": "Arial;13;0",
-									"left": 503,
+									"left": 500,
 									"top": 458,
 									"width": 7.22998046875,
 									"height": 13,
@@ -2707,7 +2707,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 534,
+									"left": 532,
 									"top": 486,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -2727,8 +2727,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 547,
-									"top": 484,
+									"left": 546,
+									"top": 483,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -2746,7 +2746,7 @@
 										"$ref": "AAAAAAGQVoetd1JLpnU="
 									},
 									"font": "Arial;13;0",
-									"left": 527,
+									"left": 526,
 									"top": 503,
 									"width": 19.5126953125,
 									"height": 13,
@@ -2798,7 +2798,7 @@
 								"$ref": "AAAAAAGQVkyY3sbrdjY="
 							},
 							"lineStyle": 1,
-							"points": "519:451;520:519",
+							"points": "516:451;519:519",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGQVoetd1JOEO4="
@@ -3553,7 +3553,7 @@
 											"top": 398,
 											"width": 195.74609375,
 											"height": 13,
-											"text": "+c_ciclo_promedio(): void",
+											"text": "+c_proximo_ciclo(): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3655,7 +3655,7 @@
 										"$ref": "AAAAAAGSMB2hN4GxOVM="
 									},
 									"font": "Arial;13;0",
-									"left": 334,
+									"left": 330,
 									"top": 364,
 									"width": 50.9462890625,
 									"height": 13,
@@ -3678,7 +3678,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 362,
+									"left": 358,
 									"top": 342,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -3699,7 +3699,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 362,
+									"left": 358,
 									"top": 387,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -3784,7 +3784,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 373,
+									"left": 365,
 									"top": 357,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -3804,7 +3804,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 370,
+									"left": 362,
 									"top": 343,
 									"height": 13,
 									"alpha": -0.7853981633974483,
@@ -3823,7 +3823,7 @@
 										"$ref": "AAAAAAGSMB2hN4GzBlM="
 									},
 									"font": "Arial;13;0",
-									"left": 376,
+									"left": 368,
 									"top": 384,
 									"width": 19.5126953125,
 									"height": 13,
@@ -3873,7 +3873,7 @@
 								"$ref": "AAAAAAGSMBd31VSwvv4="
 							},
 							"lineStyle": 1,
-							"points": "326:378;399:378",
+							"points": "326:378;391:378",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGSMB2hOIG2fkg="
@@ -5094,7 +5094,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGQVkyY3cbp1rE="
 							},
-							"name": "fecha_inicio",
+							"name": "fecha_inicio_ultima_menstruacion",
 							"visibility": "private",
 							"type": "date"
 						},
@@ -5104,7 +5104,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGQVkyY3cbp1rE="
 							},
-							"name": "fecha_fin",
+							"name": "fecha_inicio_menstruacion_actual",
 							"visibility": "private",
 							"type": "date"
 						},
@@ -5174,7 +5174,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGQVkyY3cbp1rE="
 							},
-							"name": "m_ciclo_promedio",
+							"name": "m_proximo_ciclo",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -5201,7 +5201,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGSX33V/dp47eU="
 									},
-									"type": "string",
+									"type": "int",
 									"direction": "return"
 								}
 							]
@@ -6193,7 +6193,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGSMBd301SuPNI="
 							},
-							"name": "c_ciclo_promedio",
+							"name": "c_proximo_ciclo",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
