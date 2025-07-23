@@ -1,3 +1,3 @@
-El programa está basado para el uso de una Ginecologa que tenga el control de las estudiantes.
-
-Se guarda en un archivo comprimido ahora ya que contiene demasiados archivos actualmente.
+# MENSTRUTRACK
+### Funcionalidad -
+Este programa esta basado en resolver la necesidad sobre el ciclo menstrual de las estudiantes de una ginecologa que trabaja diariamente en una escuela privada, donde se le requiere tener un recopilatorio de sus estudiantes. El programa presenta varias opciones desde registrar a las estudiantes hasta dar pequeños diágnosticos que puedan ayudar a tratar de manera correcta.
